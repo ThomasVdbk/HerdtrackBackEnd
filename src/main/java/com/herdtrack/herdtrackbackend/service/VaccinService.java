@@ -40,7 +40,7 @@ public class VaccinService {
         return this.vaccinRepo.findByDate(date);
     }
     public List<Vaccin> findByDays (int nbrJoursProchain){
-        return this.vaccinRepo.findByDays(nbrJoursProchain);
+        return this.vaccinRepo.findByJours(nbrJoursProchain);
     }
     public Vaccin create(Vaccin newVaccin) {
         return this.vaccinRepo.save(newVaccin);

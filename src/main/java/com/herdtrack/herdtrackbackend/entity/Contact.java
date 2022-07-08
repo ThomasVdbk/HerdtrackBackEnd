@@ -16,15 +16,15 @@ public class Contact {
 
 
     // This is a JPA annotation that tells the database to create a column called last_name with a length of 45 characters.
-    @Column(name = "last_name", length = 45,nullable = false)
-    private String lastName;
+    @Column(name = "nom", length = 45,nullable = false)
+    private String nom;
 
 
 
     // This is a JPA annotation that tells the database to create a column called first_name with a length of 45
     // characters.
-    @Column(name = "first_name", length = 45,nullable = false)
-    private String firstName;
+    @Column(name = "prenom", length = 45,nullable = false)
+    private String prenom;
 
 
   // This is a JPA annotation that tells the database to create a column called relation with a length of 45 characters.
@@ -42,8 +42,8 @@ public class Contact {
 
     // This is a constructor that takes in the parameters and sets them to the class variables.
     public Contact(String lastName, String firstName, String relation, String phone) {
-        this.lastName = lastName;
-        this.firstName = firstName;
+        this.nom = nom;
+        this.prenom = prenom;
         this.relation = relation;
         this.phone = phone;
     }
@@ -51,8 +51,8 @@ public class Contact {
 
     public Contact(Long id, String lastName, String firstName, String relation, String phone) {
         this.id = id;
-        this.lastName = lastName;
-        this.firstName = firstName;
+        this.nom = nom;
+        this.prenom = prenom;
         this.relation = relation;
         this.phone = phone;
     }
@@ -65,20 +65,20 @@ public class Contact {
         this.id = id;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getNom() {
+        return nom;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setNom(String Nom) {
+        this.nom = nom;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getPrenom() {
+        return prenom;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
     }
 
     public String getRelation() {

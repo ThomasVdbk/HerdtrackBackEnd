@@ -7,9 +7,9 @@ import java.util.List;
 
 public interface ContactRepo extends JpaRepository<Contact, Long> {
 
-    List<Contact> findByLastName(String lastName);
+    List<Contact> findByNom(String nom);
 
-    List<Contact> findByfirstName(String firstName);
+    List<Contact> findByPrenom(String prenom);
 
     List<Contact> findByPhone (String phone);
 

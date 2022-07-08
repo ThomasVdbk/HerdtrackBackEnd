@@ -15,6 +15,6 @@ public interface VaccinRepo extends JpaRepository<Vaccin, Long> {
 
     List<Vaccin> findByDate (Date date);
 
-    List<Vaccin> findByDays (int nbrJoursProchain);
+    List<Vaccin> findByJours (int nbrJoursProchain);
 
 }

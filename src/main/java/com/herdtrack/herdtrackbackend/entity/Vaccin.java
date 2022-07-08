@@ -29,7 +29,7 @@ public class Vaccin {
 
 
     @Column(name = "nbr_jours_prochain" , nullable = false)
-    private int nbrDaysNext;
+    private int nbrJoursProchain;
 
     // A void constructor.
     public Vaccin() {
@@ -40,7 +40,7 @@ public class Vaccin {
         this.libelle = libelle;
         this.numero_lot = numero_lot;
         this.date_vaccination = date_vaccination;
-        this.nbrDaysNext = nbrDaysNext;
+        this.nbrJoursProchain = nbrDaysNext;
     }
 
     public Vaccin(Long id, String libelle, String numero_lot, Date date_vaccination, int nbrDaysNext) {
@@ -48,7 +48,7 @@ public class Vaccin {
         this.libelle = libelle;
         this.numero_lot = numero_lot;
         this.date_vaccination = date_vaccination;
-        this.nbrDaysNext = nbrDaysNext;
+        this.nbrJoursProchain = nbrDaysNext;
     }
 
     public Long getId() {
@@ -83,11 +83,11 @@ public class Vaccin {
         this.date_vaccination = date_vaccination;
     }
 
-    public int getNbrDaysNext() {
-        return nbrDaysNext;
+    public int getNbrJoursProchain() {
+        return nbrJoursProchain;
     }
 
-    public void setNbrDaysNext(int nbrDaysNext) {
-        this.nbrDaysNext = nbrDaysNext;
+    public void setNbrJoursProchain(int nbrJoursProchain) {
+        this.nbrJoursProchain = nbrJoursProchain;
     }
 }

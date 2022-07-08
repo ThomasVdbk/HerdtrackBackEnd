@@ -27,12 +27,12 @@ public List<Contact> findAll(){return this.contactRepo.findAll();}
         }
     }
 
-public List<Contact> findByLastName(String lastName){
-        return this.contactRepo.findByLastName(lastName);
+public List<Contact> findByNom(String nom){
+        return this.contactRepo.findByNom(nom);
 }
 
-public List<Contact> findByfirstName(String firstName){
-    return this.contactRepo.findByfirstName(firstName);
+public List<Contact> findByPrenom(String prenom){
+    return this.contactRepo.findByPrenom(prenom);
 }
 
 public List<Contact> findByRelation(String relation){
