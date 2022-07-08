@@ -16,16 +16,14 @@ public class Contact {
 
 
     // This is a JPA annotation that tells the database to create a column called last_name with a length of 45 characters.
-    @Column(name = "last_name", length = 45)
-    @NotNull
+    @Column(name = "last_name", length = 45,nullable = false)
     private String lastName;
 
 
 
     // This is a JPA annotation that tells the database to create a column called first_name with a length of 45
     // characters.
-    @Column(name = "first_name", length = 45)
-    @NotNull
+    @Column(name = "first_name", length = 45,nullable = false)
     private String firstName;
 
 
@@ -35,8 +33,7 @@ public class Contact {
 
 
     // This is a JPA annotation that tells the database to create a column called phone with a length of 45 characters.
-    @Column(name = "phone",length = 45)
-    @NotNull
+    @Column(name = "phone",length = 45,nullable = false)
     private String phone;
 
     // This is a default constructor. It is required by JPA.

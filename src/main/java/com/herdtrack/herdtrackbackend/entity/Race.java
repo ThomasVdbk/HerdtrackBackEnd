@@ -14,8 +14,7 @@ public class Race {
 
 
     // Creating a column in the database called libelle with a length of 45 characters and it is not null.
-    @Column(name = "libelle",length = 45)
-    @NotNull
+    @Column(name = "libelle",length = 45,nullable = false)
     private String libelle;
 
 

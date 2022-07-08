@@ -2,35 +2,40 @@ package com.herdtrack.herdtrackbackend.entity;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.util.Date;
+import java.sql.Date;
 
 
 @Entity
 @Table(name = "vaccin")
 public class Vaccin {
 
+    // Creating a primary key for the table.
     @Id
     @GeneratedValue
-private Long id;
+    private Long id;
 
-    @Column(name = "libelle", length = 45)
-    @NotNull
-private String libelle;
+   // A JPA annotation that maps the field to a column in the database.
+    @Column(name = "libelle", length = 45,nullable = false)
+    private String libelle;
 
-    @Column(name = "numero_lot", length = 45)
-    @NotNull
-private String numero_lot;
+    // Creating a column in the database called numero_lot with a length of 45 characters and it is not nullable.
+    @Column(name = "numero_lot", length = 45,nullable = false)
+    private String numero_lot;
 
-    @Column(name = "date_vaccination")
+    // Creating a column in the database called date_vaccination and it is not nullable.
+    @Column(name = "date_vaccination",nullable = false)
     @Temporal(TemporalType.DATE)
-    @NotNull
-private Date date_vaccination;
+    private Date date_vaccination;
 
-private int nbrDaysNext;
 
+    @Column(name = "nbr_jours_prochain" , nullable = false)
+    private int nbrDaysNext;
+
+    // A void constructor.
     public Vaccin() {
     }
 
+    // A constructor.
     public Vaccin(String libelle, String numero_lot, Date date_vaccination, int nbrDaysNext) {
         this.libelle = libelle;
         this.numero_lot = numero_lot;
