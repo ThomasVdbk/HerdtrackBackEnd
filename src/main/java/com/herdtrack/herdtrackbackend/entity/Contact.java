@@ -9,38 +9,38 @@ import javax.validation.constraints.NotNull;
 public class Contact {
 
 
-    // This is a JPA annotation that tells the database to auto-generate the id for each new record.
+    // Création d'une clé primaire pour la table.
     @Id
     @GeneratedValue
     private  Long id;
 
 
-    // This is a JPA annotation that tells the database to create a column called last_name with a length of 45 characters.
+    // Mappage du champ à une colonne de la base de données.
     @Column(name = "nom", length = 45,nullable = false)
     private String nom;
 
 
 
-    // This is a JPA annotation that tells the database to create a column called first_name with a length of 45
-    // characters.
+    // Mappage du champ à une colonne de la base de données.
     @Column(name = "prenom", length = 45,nullable = false)
     private String prenom;
 
 
-  // This is a JPA annotation that tells the database to create a column called relation with a length of 45 characters.
+    // Une annotation JPA qui mappe le champ à une colonne de la base de données.
     @Column(name = "relation", length = 45)
     private String relation;
 
 
-    // This is a JPA annotation that tells the database to create a column called phone with a length of 45 characters.
+    // Une annotation JPA qui mappe le champ à une colonne de la base de données.
     @Column(name = "phone",length = 45,nullable = false)
     private String phone;
 
-    // This is a default constructor. It is required by JPA.
+
+    // Il s'agit d'un constructeur vide.
     public Contact() {
     }
 
-    // This is a constructor that takes in the parameters and sets them to the class variables.
+
     public Contact(String lastName, String firstName, String relation, String phone) {
         this.nom = nom;
         this.prenom = prenom;
@@ -49,6 +49,7 @@ public class Contact {
     }
 
 
+    // Il s'agit d'un constructeur.
     public Contact(Long id, String lastName, String firstName, String relation, String phone) {
         this.id = id;
         this.nom = nom;

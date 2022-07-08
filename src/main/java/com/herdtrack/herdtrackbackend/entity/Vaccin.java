@@ -2,40 +2,46 @@ package com.herdtrack.herdtrackbackend.entity;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.sql.Date;
+import java.util.Date;
 
 
 @Entity
 @Table(name = "vaccin")
 public class Vaccin {
 
-    // Creating a primary key for the table.
+
+    // Création d'une clé primaire pour la table.
     @Id
     @GeneratedValue
     private Long id;
 
-   // A JPA annotation that maps the field to a column in the database.
+    // Création d'une colonne dans la base de données appelée libelle et non nullable.
     @Column(name = "libelle", length = 45,nullable = false)
     private String libelle;
 
-    // Creating a column in the database called numero_lot with a length of 45 characters and it is not nullable.
+
+    // Création d'une colonne dans la base de données appelée numero_lot et elle n'est pas nullable.
     @Column(name = "numero_lot", length = 45,nullable = false)
     private String numero_lot;
 
-    // Creating a column in the database called date_vaccination and it is not nullable.
+
+    // Le code ci-dessus crée une colonne dans la base de données appelée date_vaccination et il n'est pas nullable.
     @Column(name = "date_vaccination",nullable = false)
     @Temporal(TemporalType.DATE)
     private Date date_vaccination;
 
 
+    // Une colonne dans la base de données.
     @Column(name = "nbr_jours_prochain" , nullable = false)
     private int nbrJoursProchain;
 
-    // A void constructor.
+
+    // Un constructeur par défaut.
     public Vaccin() {
     }
 
-    // A constructor.
+
+    // Un constructeur.
     public Vaccin(String libelle, String numero_lot, Date date_vaccination, int nbrDaysNext) {
         this.libelle = libelle;
         this.numero_lot = numero_lot;
@@ -43,7 +49,8 @@ public class Vaccin {
         this.nbrJoursProchain = nbrDaysNext;
     }
 
-    public Vaccin(Long id, String libelle, String numero_lot, Date date_vaccination, int nbrDaysNext) {
+   // Un constructeur.
+     public Vaccin(Long id, String libelle, String numero_lot, Date date_vaccination, int nbrDaysNext) {
         this.id = id;
         this.libelle = libelle;
         this.numero_lot = numero_lot;

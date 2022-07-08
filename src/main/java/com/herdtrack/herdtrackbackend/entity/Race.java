@@ -7,22 +7,26 @@ import javax.validation.constraints.NotNull;
 @Table(name = "race")
 public class Race {
 
-    // Creating a primary key for the table.
+
+    // Création d'une clé primaire pour la table.
     @Id
     @GeneratedValue
     private Long id;
 
 
-    // Creating a column in the database called libelle with a length of 45 characters and it is not null.
+
+    // Création d'une colonne dans la base de données appelée libelle avec une longueur de 45 et elle n'est pas nullable.
     @Column(name = "libelle",length = 45,nullable = false)
     private String libelle;
 
 
-    // A void constructor.
+
+    // Un constructeur vide.
     public Race() {
     }
 
-    // A constructor.
+
+    // Un constructeur.
     public Race(String libelle) {
         this.libelle = libelle;
     }
