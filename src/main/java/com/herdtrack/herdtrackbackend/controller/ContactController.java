@@ -17,6 +17,25 @@ public class ContactController {
     @Autowired
     private ContactService contactService;
 
+    /**
+     * Cette fonction est une requête GET qui renvoie une liste de tous les contacts de la base de données
+     *
+     * @return Une liste de contacts
+     */
+    @GetMapping("")
+    @ResponseStatus(code = HttpStatus.OK)
+    public List<Contact> findAll(){
+        return this.contactService.findAll();
+    }
+
+    // Il s'agit d'une méthode qui renvoie un contact avec le même identifiant.
+    @GetMapping("/{id}")
+    @ResponseStatus(code = HttpStatus.OK)
+    public Contact findById(@PathVariable Long id) {
+        return this.contactService.findById(id);
+    };
+
+
     // Il s'agit d'une méthode qui renvoie une liste de contacts portant le même nom de famille.
     @GetMapping("/nom/{nom}")
     @ResponseStatus(code = HttpStatus.OK)
@@ -66,7 +85,7 @@ public class ContactController {
     public Contact update(@RequestBody Contact contact,@PathVariable Long id) {
 
         if (!id.equals(contact.getId())) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "mauvaise Adress a mettre à jour");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "mauvaise Contact a mettre à jour");
         }
         return this.contactService.update(contact);
     }
