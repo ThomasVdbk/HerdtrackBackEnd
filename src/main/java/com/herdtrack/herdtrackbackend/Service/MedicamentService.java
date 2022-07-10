@@ -71,7 +71,7 @@ public class MedicamentService {
         this.medicamentRepo.deleteById(id);
         if (this.medicamentRepo.existsById(id)) {
             throw new ResponseStatusException(HttpStatus.EXPECTATION_FAILED,
-                    "erreur lors de la suppression du médicament sanitaire");
+                    "erreur lors de la suppression du médicament ");
         }
 
         return medicamentDel;
