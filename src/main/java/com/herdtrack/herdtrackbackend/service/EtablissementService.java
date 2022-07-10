@@ -32,7 +32,6 @@ public class EtablissementService {
      @return Etablissement
      @author Nicolas Desdevises
      */
-
     public Etablissement findById(Long id) {
 
         Optional<Etablissement> optEtablissement = this.etablissementRepository.findById(id);
@@ -49,7 +48,6 @@ public class EtablissementService {
      @return Etablissement
      @author Nicolas Desdevises
      */
-
     public Etablissement findByNumeroExploitation(String numeroExploitation) {
 
         return etablissementRepository.findByNumeroExploitation(numeroExploitation);
@@ -58,7 +56,7 @@ public class EtablissementService {
 
     /*
      methode pour créer un établissment
-     @param etablissement Etablissement, etablissement a enregistrée
+     @param etablissement Etablissement, etablissement à enregistrer
      @return Etablissement créé
      @author Nicolas Desdevises
      */
@@ -69,11 +67,10 @@ public class EtablissementService {
 
     /*
      methode pour mettre à jour un établissment
-     @param etablissement Etablissement, etablissement qui contient à mettre à jour
+     @param etablissement Etablissement, etablissement qui contient la mise à jour
      @return Etablissement mise à jour
      @author Nicolas Desdevises
      */
-
     public Etablissement update(Etablissement etablissement) {
 
         if (!this.etablissementRepository.existsById(etablissement.getId())) {

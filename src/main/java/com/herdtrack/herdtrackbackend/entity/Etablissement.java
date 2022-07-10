@@ -5,6 +5,7 @@ import javax.persistence.*;
 /*
 
 Classe Etablissement d'un éleveur
+@author Nicolas Desdevises
  */
 @Entity
 @Table(name = "etablissement")
@@ -17,6 +18,8 @@ public class Etablissement {
     private String lieu;
     @Column(name = "numero_exploitation", nullable = false, length = 50)
     private String numeroExploitation;
+    @OneToOne()
+    private Eleveur eleveur;
 
     public Etablissement() {
     }
@@ -43,5 +46,13 @@ public class Etablissement {
 
     public void setNumeroExploitation(String numeroExploitation) {
         this.numeroExploitation = numeroExploitation;
+    }
+
+    public Eleveur getEleveur() {
+        return eleveur;
+    }
+
+    public void setEleveur(Eleveur eleveur) {
+        this.eleveur = eleveur;
     }
 }
