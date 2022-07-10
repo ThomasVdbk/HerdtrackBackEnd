@@ -33,21 +33,21 @@ public class RaceController {
     @ResponseStatus(code = HttpStatus.OK)
     public Race findById(@PathVariable Long id) {
         return this.raceService.findById(id);
-    };
+    }
 
     // Une méthode qui renvoie une liste de races qui ont la même libelle.
     @GetMapping("/libelle/{libelle}")
     @ResponseStatus(code = HttpStatus.OK)
     public List<Race> findByNom(@PathVariable String libelle){
         return this.raceService.findByLibelle(libelle);
-    };
+    }
 
     // Création d'une nouvelle race.
     @PostMapping("")
     @ResponseStatus(code = HttpStatus.CREATED)
     public Race create(@RequestBody Race newRace) {
         return this.raceService.create(newRace);
-    };
+    }
 
     /**
      * Il met à jour une race

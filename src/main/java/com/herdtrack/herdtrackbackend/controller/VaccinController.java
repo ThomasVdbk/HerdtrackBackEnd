@@ -47,7 +47,7 @@ public class VaccinController {
      * @return Une liste d'objets Vaccin
     /**
      * Cette fonction est une requête GET qui renvoie une liste de vaccins avec le même numero_lot
-     * 
+     *
      * @param "numero_lot" le numéro du lot
      * @return Une liste d'objets Vaccin
      */
@@ -91,19 +91,17 @@ public class VaccinController {
     @PostMapping("/{id}")
     @ResponseStatus(code = HttpStatus.ACCEPTED)
     public Vaccin update(@RequestBody Vaccin vaccin, @PathVariable Long id) {
-
+        if (!id.equals(vaccin.getId())) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "mauvaise Race a mettre à jour");
+        }
+        return this.vaccinService.update(vaccin);
+    }
     /**
      * Il supprime un vaccin par identifiant.
      *
      * @param id l'identifiant du vaccin à supprimer
      * @return L'objet Vaccin supprimé.
      */
-        if (!id.equals(vaccin.getId())) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "mauvaise Race a mettre à jour");
-        }
-        return this.vaccinService.update(vaccin);
-    }
-
     @DeleteMapping("/{id}")
     @ResponseStatus(code=HttpStatus.ACCEPTED)
 public Vaccin delete(@PathVariable Long id){return this.vaccinService.delete(id);}

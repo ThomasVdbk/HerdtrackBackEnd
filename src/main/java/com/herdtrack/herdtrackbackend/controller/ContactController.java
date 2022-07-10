@@ -14,6 +14,7 @@ import java.util.List;
 public class ContactController {
 
 
+    // Injecter le ContactService dans le ContactController.
     @Autowired
     private ContactService contactService;
 

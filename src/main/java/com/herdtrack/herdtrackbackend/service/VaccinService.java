@@ -97,7 +97,7 @@ public class VaccinService {
     public Vaccin update(Vaccin vaccin) {
         if (! this.vaccinRepo.existsById(vaccin.getId())) {
             throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE,
-                    "impossible de trouver le contact a mettre à jour");
+                    "impossible de trouver le vaccin a mettre à jour");
         }
         return this.vaccinRepo.save(vaccin);
     }
@@ -111,13 +111,13 @@ public class VaccinService {
     public Vaccin delete (Long id) {
         if (! this.vaccinRepo.existsById(id)) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND,
-                    "impossible de trouver le contact à supprimer");
+                    "impossible de trouver le vaccin à supprimer");
         }
         Vaccin vaccinDel = this.findById(id);
         this.vaccinRepo.deleteById(id);
         if (this.vaccinRepo.existsById(id)) {
             throw new ResponseStatusException(HttpStatus.EXPECTATION_FAILED,
-                    "erreur lors de la suppression du contact");
+                    "erreur lors de la suppression du vaccin");
         }
 
         return vaccinDel;

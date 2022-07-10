@@ -19,7 +19,8 @@ public class Race {
     @Column(name = "libelle",length = 45,nullable = false)
     private String libelle;
 
-
+@ManyToOne
+ private Espece espece;
 
     // Un constructeur vide.
     public Race() {
