@@ -64,7 +64,7 @@ public class EleveurService {
 
         if (!this.eleveurRepository.existsById(eleveur.getId())) {
             throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE,
-                    "impossible de trouver l'eleveur' a mettre à jour");
+                    "impossible de trouver l'eleveur a mettre à jour");
         }
 
         return this.eleveurRepository.save(eleveur);

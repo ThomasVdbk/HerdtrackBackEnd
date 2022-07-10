@@ -75,7 +75,7 @@ public class EtablissementService {
 
         if (!this.etablissementRepository.existsById(etablissement.getId())) {
             throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE,
-                    "impossible de trouver l'etablissement' a mettre à jour");
+                    "impossible de trouver l'etablissement a mettre à jour");
         }
 
         return this.etablissementRepository.save(etablissement);
