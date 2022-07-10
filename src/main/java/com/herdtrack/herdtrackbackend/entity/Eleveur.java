@@ -17,6 +17,7 @@ public class Eleveur {
     private String nom;
     @Column(name = "prenom", nullable = false, length = 50)
     private String prenom;
+    //ToDo : modifier l'annotation pour onetomany ?
     @OneToOne(mappedBy = "eleveur")
     private Etablissement etablissement;
 

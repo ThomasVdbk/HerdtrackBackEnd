@@ -18,6 +18,8 @@ public class Etablissement {
     private String lieu;
     @Column(name = "numero_exploitation", nullable = false, length = 50)
     private String numeroExploitation;
+
+    //ToDo : modifier l'annotation pour onetomany ?
     @OneToOne()
     private Eleveur eleveur;
 

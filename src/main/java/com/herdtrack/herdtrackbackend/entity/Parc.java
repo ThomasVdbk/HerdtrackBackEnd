@@ -1,6 +1,7 @@
 package com.herdtrack.herdtrackbackend.entity;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 /*
@@ -20,13 +21,8 @@ public class Parc {
     private int nombreTroupeau;
     @Column(name = "quarantaine", nullable = false)
     private boolean quarantaine;
-
-    @ManyToMany(mappedBy = "subParcs")
-    private Set<Parc> parcs;
-
-    @ManyToMany(fetch = FetchType.LAZY)
-    private Set<Parc> subParcs;
-
+    @OneToMany(mappedBy = "parc")
+    private List<Troupeau> troupeaux;
 
     public Parc() {
     }
@@ -63,19 +59,11 @@ public class Parc {
         this.quarantaine = quarantaine;
     }
 
-    public Set<Parc> getParcs() {
-        return parcs;
+    public List<Troupeau> getTroupeaux() {
+        return troupeaux;
     }
 
-    public void setParcs(Set<Parc> parcs) {
-        this.parcs = parcs;
-    }
-
-    public Set<Parc> getSubParcs() {
-        return subParcs;
-    }
-
-    public void setSubParcs(Set<Parc> subParcs) {
-        this.subParcs = subParcs;
+    public void setTroupeaux(List<Troupeau> troupeaux) {
+        this.troupeaux = troupeaux;
     }
 }
