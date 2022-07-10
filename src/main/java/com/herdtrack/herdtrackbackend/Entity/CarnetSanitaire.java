@@ -2,6 +2,7 @@ package com.herdtrack.herdtrackbackend.Entity;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Classe carnetsanitaire
@@ -70,4 +71,5 @@ public class CarnetSanitaire {
     public void setDateNaissance(Date dateNaissance) {
         this.dateNaissance = dateNaissance;
     }
+
 }
