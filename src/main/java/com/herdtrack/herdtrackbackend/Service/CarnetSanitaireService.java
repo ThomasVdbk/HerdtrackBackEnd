@@ -67,13 +67,13 @@ public class CarnetSanitaireService {
     public CarnetSanitaire delete(Long id) {
             if (! this.carnetSanitaireRepo.existsById(id)) {
                 throw new ResponseStatusException(HttpStatus.NOT_FOUND,
-                        "impossible de trouver l'Adresse à supprimer");
+                        "impossible de trouver le carnet sanitaire à supprimer");
             }
             CarnetSanitaire carnetSanitDel = this.findById(id);
             this.carnetSanitaireRepo.deleteById(id);
             if (this.carnetSanitaireRepo.existsById(id)) {
                 throw new ResponseStatusException(HttpStatus.EXPECTATION_FAILED,
-                        "erreur lors de la suppressiion du carnet sanitaire");
+                        "erreur lors de la suppression du carnet sanitaire");
             }
 
             return carnetSanitDel;
