@@ -1,12 +1,14 @@
 package com.herdtrack.herdtrackbackend.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
 /**
  * Classe carnetsanitaire
- * @author romain vasseur
+ * @author Alexandre Dessoly
  */
 
 @Entity

@@ -73,7 +73,7 @@ public class CarnetSanitaireService {
             this.carnetSanitaireRepo.deleteById(id);
             if (this.carnetSanitaireRepo.existsById(id)) {
                 throw new ResponseStatusException(HttpStatus.EXPECTATION_FAILED,
-                        "erreur lors de la suppressiion de l'Adresse");
+                        "erreur lors de la suppressiion du carnet sanitaire");
             }
 
             return carnetSanitDel;
