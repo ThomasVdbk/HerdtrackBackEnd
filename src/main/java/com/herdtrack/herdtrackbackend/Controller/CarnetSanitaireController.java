@@ -38,7 +38,7 @@ public class CarnetSanitaireController {
     @ResponseStatus(code = HttpStatus.ACCEPTED)
     public CarnetSanitaire update(@RequestBody CarnetSanitaire carnetSanitaire,@PathVariable Long id) {
         if (!id.equals(carnetSanitaire.getId())) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "mauvaise Adress a mettre à jour");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "mauvais carnet sanitaire a mettre à jour");
         }
         return this.carnetSanitaire.update(carnetSanitaire);
     }
