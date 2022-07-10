@@ -1,7 +1,7 @@
 package com.herdtrack.herdtrackbackend.entity;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
+
 
 @Entity
 @Table(name = "race")
@@ -19,7 +19,9 @@ public class Race {
     @Column(name = "libelle",length = 45,nullable = false)
     private String libelle;
 
+// Création d'une relation entre les tables Race et Espece.
 @ManyToOne
+@JoinColumn(name = "espece_id")
  private Espece espece;
 
     // Un constructeur vide.

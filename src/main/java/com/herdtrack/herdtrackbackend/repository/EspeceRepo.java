@@ -1,7 +1,9 @@
 package com.herdtrack.herdtrackbackend.repository;
 
 import com.herdtrack.herdtrackbackend.entity.Espece;
+import com.herdtrack.herdtrackbackend.entity.Race;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
@@ -15,5 +17,8 @@ public interface EspeceRepo extends JpaRepository<Espece, Long> {
      */
     List<Espece> findByLibelle(String libelle);
 
+
+    @Query("select r from Race r")
+    List<Race> findByRace();
 
 }
