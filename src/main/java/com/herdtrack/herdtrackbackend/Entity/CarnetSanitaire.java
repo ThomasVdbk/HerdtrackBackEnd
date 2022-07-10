@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 /**
- * Classe carnetsanitaire 
+ * Classe carnetsanitaire
  * @author romain vasseur
  */
 
