@@ -77,4 +77,19 @@ public class RaceController {
     public Race delete(@PathVariable Long id) {
         return this.raceService.delete(id);
     }
+
+
+    /**
+     * Cette fonction renvoie une liste de races par espece id
+     *
+     * @param id l'identifiant de l'espece
+     * @return Une liste de races
+     */
+
+
+    @GetMapping("/races/espece/{id}")
+    @ResponseStatus(code=HttpStatus.OK)
+    public List<Race> findRacesByEspece(@PathVariable Long id){
+        return this.raceService.findRacesByEspece(id);
+    }
 }

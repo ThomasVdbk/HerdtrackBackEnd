@@ -93,6 +93,13 @@ public List<Race> findByLibelle(String libelle) {
         return raceDel;
     }
 
+    public List<Race> findRacesByEspece(Long id){
+        if (! this.raceRepo.existsById(id)) {
+            throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE,
+                    "impossible de trouver l'espece sélectionné'");
+        }
+        return this.raceRepo.findRacesByEspece(id);
+    }
 
 
 }
