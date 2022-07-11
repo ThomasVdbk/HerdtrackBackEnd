@@ -1,13 +1,14 @@
 package com.herdtrack.herdtrackbackend.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 /*
 Classe d'un éleveur d'animaux
 @author Nicolas Desdevises
  */
 @Entity
-@Table(name="eleveur")
+@Table(name = "eleveur")
 public class Eleveur {
 
     @Id
@@ -18,8 +19,8 @@ public class Eleveur {
     @Column(name = "prenom", nullable = false, length = 50)
     private String prenom;
     //ToDo : modifier l'annotation pour onetomany ?
-    @OneToOne(mappedBy = "eleveur")
-    private Etablissement etablissement;
+    @OneToMany(mappedBy = "eleveur")
+    private List<Etablissement> etablissements;
 
     public Eleveur() {
     }
@@ -48,11 +49,11 @@ public class Eleveur {
         this.prenom = prenom;
     }
 
-    public Etablissement getEtablissement() {
-        return etablissement;
+    public List<Etablissement> getEtablissements() {
+        return etablissements;
     }
 
-    public void setEtablissement(Etablissement etablissement) {
-        this.etablissement = etablissement;
+    public void setEtablissements(List<Etablissement> etablissements) {
+        this.etablissements = etablissements;
     }
 }

@@ -20,7 +20,7 @@ public class Etablissement {
     private String numeroExploitation;
 
     //ToDo : modifier l'annotation pour onetomany ?
-    @OneToOne()
+    @ManyToOne
     private Eleveur eleveur;
 
     public Etablissement() {
