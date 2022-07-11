@@ -23,6 +23,8 @@ public class Parc {
     private boolean quarantaine;
     @OneToMany(mappedBy = "parc")
     private List<Troupeau> troupeaux;
+    @ManyToOne
+    private StatutSante statutSante;
 
     public Parc() {
     }
