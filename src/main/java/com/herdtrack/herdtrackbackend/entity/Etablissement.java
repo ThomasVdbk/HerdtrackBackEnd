@@ -19,7 +19,6 @@ public class Etablissement {
     @Column(name = "numero_exploitation", nullable = false, length = 50)
     private String numeroExploitation;
 
-    //ToDo : modifier l'annotation pour onetomany ?
     @ManyToOne
     private Eleveur eleveur;
 

@@ -1,6 +1,5 @@
 package com.herdtrack.herdtrackbackend.service;
 
-import com.herdtrack.herdtrackbackend.entity.Etablissement;
 import com.herdtrack.herdtrackbackend.entity.Parc;
 import com.herdtrack.herdtrackbackend.repository.ParcRepository;
 import org.springframework.beans.factory.annotation.Autowired;

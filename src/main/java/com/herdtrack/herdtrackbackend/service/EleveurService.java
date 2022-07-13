@@ -1,7 +1,6 @@
 package com.herdtrack.herdtrackbackend.service;
 
 import com.herdtrack.herdtrackbackend.entity.Eleveur;
-import com.herdtrack.herdtrackbackend.entity.Etablissement;
 import com.herdtrack.herdtrackbackend.repository.EleveurRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

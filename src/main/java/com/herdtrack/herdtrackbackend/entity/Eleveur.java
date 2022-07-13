@@ -1,5 +1,7 @@
 package com.herdtrack.herdtrackbackend.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -18,8 +20,9 @@ public class Eleveur {
     private String nom;
     @Column(name = "prenom", nullable = false, length = 50)
     private String prenom;
-    //ToDo : modifier l'annotation pour onetomany ?
-    @OneToMany(mappedBy = "eleveur")
+
+    @OneToMany(mappedBy = "eleveur", fetch = FetchType.LAZY)
+    @JsonIgnore
     private List<Etablissement> etablissements;
 
     public Eleveur() {

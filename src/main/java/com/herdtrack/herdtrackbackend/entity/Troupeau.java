@@ -15,9 +15,6 @@ public class Troupeau {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-//ToDo : methode pour la mesure du list.length animaux
-    @Column(name = "quantite_animal")
-    private int quantiteAnimaux;
     @ManyToOne
     private Parc parc;
 
@@ -30,14 +27,6 @@ public class Troupeau {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public int getQuantiteAnimaux() {
-        return quantiteAnimaux;
-    }
-
-    public void setQuantiteAnimaux(int quantiteAnimaux) {
-        this.quantiteAnimaux = quantiteAnimaux;
     }
 
     public Parc getParc() {

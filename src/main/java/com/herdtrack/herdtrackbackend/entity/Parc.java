@@ -2,7 +2,6 @@ package com.herdtrack.herdtrackbackend.entity;
 
 import javax.persistence.*;
 import java.util.List;
-import java.util.Set;
 
 /*
 Classe Parc, lieu où est placé un troupeau
@@ -21,7 +20,7 @@ public class Parc {
     private int nombreTroupeau;
     @Column(name = "quarantaine", nullable = false)
     private boolean quarantaine;
-    @OneToMany(mappedBy = "parc")
+    @OneToMany(mappedBy = "parc", fetch = FetchType.LAZY)
     private List<Troupeau> troupeaux;
     @ManyToOne
     private StatutSante statutSante;
