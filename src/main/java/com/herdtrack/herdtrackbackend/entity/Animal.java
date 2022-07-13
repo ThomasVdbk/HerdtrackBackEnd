@@ -24,6 +24,10 @@ public class Animal {
     @JoinColumn(name = "sortie_id", referencedColumnName = "id")
     private Sortie sortie;
 
+    @ManyToOne
+    @JoinColumn(name = "troupeau_id", referencedColumnName = "id")
+    private Troupeau troupeau;
+
 
     public Animal() {
         super();
@@ -82,5 +86,13 @@ public class Animal {
 
     public void setSortie(Sortie sortie) {
         this.sortie = sortie;
+    }
+
+    public Troupeau getTroupeau() {
+        return troupeau;
+    }
+
+    public void setTroupeau(Troupeau troupeau) {
+        this.troupeau = troupeau;
     }
 }

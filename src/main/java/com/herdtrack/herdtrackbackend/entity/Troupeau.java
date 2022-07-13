@@ -5,10 +5,13 @@ Classe Troupeau, entité qui regroupe des animaux
 @author Nicolas Desdevises
  */
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
-@Table(name="troupeau")
+@Table(name = "troupeau")
 public class Troupeau {
 
     @Id
@@ -17,6 +20,10 @@ public class Troupeau {
 
     @ManyToOne
     private Parc parc;
+
+    @OneToMany(mappedBy = "troupeau", fetch = FetchType.LAZY)
+    @JsonIgnore
+    private List<Animal> animaux;
 
     public Troupeau() {
     }
@@ -35,5 +42,13 @@ public class Troupeau {
 
     public void setParc(Parc parc) {
         this.parc = parc;
+    }
+
+    public List<Animal> getAnimaux() {
+        return animaux;
+    }
+
+    public void setAnimaux(List<Animal> animaux) {
+        this.animaux = animaux;
     }
 }
