@@ -1,9 +1,7 @@
-package com.herdtrack.herdtrackbackend.Controller;
+package com.herdtrack.herdtrackbackend.controller;
 
-import com.herdtrack.herdtrackbackend.Entity.Medicament;
-import com.herdtrack.herdtrackbackend.Entity.Traitement;
-import com.herdtrack.herdtrackbackend.Service.MedicamentService;
-import com.herdtrack.herdtrackbackend.Service.TraitementService;
+import com.herdtrack.herdtrackbackend.entity.Traitement;
+import com.herdtrack.herdtrackbackend.service.ITraitementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -16,7 +14,7 @@ import java.util.List;
 public class TraitementController {
 
     @Autowired
-    private TraitementService traitementService;
+    private ITraitementService traitementService;
 
     @GetMapping("")
     @ResponseStatus(code = HttpStatus.OK)

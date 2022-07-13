@@ -1,6 +1,6 @@
-package com.herdtrack.herdtrackbackend.Service;
+package com.herdtrack.herdtrackbackend.service;
 
-import com.herdtrack.herdtrackbackend.Entity.CarnetSanitaire;
+import com.herdtrack.herdtrackbackend.entity.CarnetSanitaire;
 import com.herdtrack.herdtrackbackend.repository.CarnetSanitaireRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class CarnetSanitaireService {
+public class CarnetSanitaireService implements ICarnetSanitaireService {
 
     @Autowired
     private CarnetSanitaireRepo carnetSanitaireRepo;
@@ -21,6 +21,7 @@ public class CarnetSanitaireService {
      * @return List<CarnetSanitaire>
      * @author Alexandre Dessoly
      */
+    @Override
     public List<CarnetSanitaire> findAll() {
         return this.carnetSanitaireRepo.findAll();
     }
@@ -31,6 +32,7 @@ public class CarnetSanitaireService {
      * @return Carnet Sanitaire
      * @Author Alexandre Dessoly
      */
+    @Override
     public CarnetSanitaire findById(Long id) {
         Optional<CarnetSanitaire> optCarnetSanit = this.carnetSanitaireRepo.findById(id);
         if (optCarnetSanit.isPresent()) {
@@ -46,6 +48,7 @@ public class CarnetSanitaireService {
      * @return CarnetSanitaire, le carnet sanitaire est enregistré avec son id
      * @Author Alexandre Dessoly
      */
+    @Override
     public CarnetSanitaire create(CarnetSanitaire newCarnetSanit) {
             return this.carnetSanitaireRepo.save(newCarnetSanit);
         }
@@ -56,6 +59,7 @@ public class CarnetSanitaireService {
      * @return CarnetSanitarie, le carnet  sanitaire mis à jour
      * @Author Alexandre Dessoly
      */
+    @Override
     public CarnetSanitaire update(CarnetSanitaire carnetSanitaire) {
             if (! this.carnetSanitaireRepo.existsById(carnetSanitaire.getId())) {
                 throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE,
@@ -64,6 +68,7 @@ public class CarnetSanitaireService {
             return this.carnetSanitaireRepo.save(carnetSanitaire);
         }
 
+    @Override
     public CarnetSanitaire delete(Long id) {
             if (! this.carnetSanitaireRepo.existsById(id)) {
                 throw new ResponseStatusException(HttpStatus.NOT_FOUND,
