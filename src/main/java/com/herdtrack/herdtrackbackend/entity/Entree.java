@@ -19,7 +19,7 @@ public class Entree {
     @Enumerated(EnumType.STRING)
     private Raison raison;
 
-    @OneToOne
+    @OneToOne(mappedBy = "entree")
     private Animal animal;
 
 

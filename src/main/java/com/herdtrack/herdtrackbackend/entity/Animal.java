@@ -16,10 +16,12 @@ public class Animal {
     @Column(name = "nom", length = 20)
     private String nom;
 
-    @OneToOne(mappedBy = "entree")
+    @OneToOne
+    @JoinColumn(name = "entree_id", referencedColumnName = "id")
     private Entree entree;
 
-    @OneToOne(mappedBy = "sortie")
+    @OneToOne
+    @JoinColumn(name = "sortie_id", referencedColumnName = "id")
     private Sortie sortie;
 
 

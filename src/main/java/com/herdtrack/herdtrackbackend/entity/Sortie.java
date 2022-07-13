@@ -18,8 +18,9 @@ public class Sortie {
     @Enumerated(EnumType.STRING)
     private Raison raison;
 
-    @OneToOne
+    @OneToOne(mappedBy = "sortie")
     private Animal animal;
+
 
     public Sortie() {
         super();
