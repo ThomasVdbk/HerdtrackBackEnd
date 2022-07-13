@@ -3,6 +3,7 @@ package com.herdtrack.herdtrackbackend.Entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -22,6 +23,9 @@ public class CarnetSanitaire {
     @Column(name="datenaissance",nullable = false)
     @Temporal(TemporalType.DATE)
     private Date dateNaissance;
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    private List<Traitement> traitements= new ArrayList<Traitement>();
 
     /**
      * Constructor carnet sanitaire

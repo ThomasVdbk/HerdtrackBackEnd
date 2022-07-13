@@ -1,6 +1,10 @@
 package com.herdtrack.herdtrackbackend.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Classe medicament
@@ -19,6 +23,10 @@ public class Medicament {
 
     @Column(name="libelle",nullable = false)
     private String libelle;
+
+    @ManyToMany(mappedBy = "medicaments", fetch = FetchType.LAZY)
+    @JsonIgnore
+    private List<Traitement> traitements= new ArrayList<Traitement>();
 
     /**
      * Constructeur

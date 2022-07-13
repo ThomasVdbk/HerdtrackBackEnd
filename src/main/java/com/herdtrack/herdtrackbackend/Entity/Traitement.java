@@ -1,10 +1,9 @@
 package com.herdtrack.herdtrackbackend.Entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name="traitement")
@@ -17,6 +16,12 @@ public class Traitement {
     private Date dateDebut;
     @Column(name="datefin",nullable = false)
     private Date dateFin;
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    private List<Medicament> medicaments = new ArrayList<Medicament>();
+
+    @ManyToMany(mappedBy = "traitements",fetch = FetchType.LAZY )
+    private List<CarnetSanitaire> carnetSanitaires = new ArrayList<CarnetSanitaire>();
 
 
     /**
