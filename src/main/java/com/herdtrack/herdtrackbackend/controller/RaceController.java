@@ -1,6 +1,7 @@
 package com.herdtrack.herdtrackbackend.controller;
 
 
+import com.herdtrack.herdtrackbackend.entity.Espece;
 import com.herdtrack.herdtrackbackend.entity.Race;
 import com.herdtrack.herdtrackbackend.service.RaceService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -82,14 +83,8 @@ public class RaceController {
     /**
      * Cette fonction renvoie une liste de races par espece id
      *
-     * @param id l'identifiant de l'espece
+     * @param espece l'identifiant de l'espece
      * @return Une liste de races
      */
 
-
-    @GetMapping("/races/espece/{id}")
-    @ResponseStatus(code=HttpStatus.OK)
-    public List<Race> findRacesByEspece(@PathVariable Long id){
-        return this.raceService.findRacesByEspece(id);
-    }
 }

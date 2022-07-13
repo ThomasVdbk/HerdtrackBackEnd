@@ -17,5 +17,6 @@ public interface EspeceRepo extends JpaRepository<Espece, Long> {
      */
     List<Espece> findByLibelle(String libelle);
 
+    List <Race> findEspeceById(Long id);
 
 }

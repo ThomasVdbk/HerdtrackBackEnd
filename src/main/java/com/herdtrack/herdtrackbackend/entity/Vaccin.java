@@ -28,7 +28,7 @@ public class Vaccin {
 
     // Le code ci-dessus crée une colonne dans la base de données appelée date_vaccination et il n'est pas nullable.
     @Column(name = "date_vaccination",nullable = false)
-    private Date date_vaccination;
+    private Date dateVaccination;
 
 
     // Une colonne dans la base de données.
@@ -42,19 +42,19 @@ public class Vaccin {
 
 
     // Un constructeur.
-    public Vaccin(String libelle, String numeroLot, Date date_vaccination, int nbrDaysNext) {
+    public Vaccin(String libelle, String numeroLot, Date dateVaccination, int nbrDaysNext) {
         this.libelle = libelle;
         this.numeroLot = numeroLot;
-        this.date_vaccination = date_vaccination;
+        this.dateVaccination = dateVaccination;
         this.nbrJoursProchain = nbrDaysNext;
     }
 
    // Un constructeur.
-     public Vaccin(Long id, String libelle, String numeroLot, Date date_vaccination, int nbrDaysNext) {
+     public Vaccin(Long id, String libelle, String numeroLot, Date dateVaccination, int nbrDaysNext) {
         this.id = id;
         this.libelle = libelle;
         this.numeroLot = numeroLot;
-        this.date_vaccination = date_vaccination;
+        this.dateVaccination = dateVaccination;
         this.nbrJoursProchain = nbrDaysNext;
     }
 
@@ -82,12 +82,12 @@ public class Vaccin {
         this.numeroLot = numeroLot;
     }
 
-    public Date getDate_vaccination() {
-        return date_vaccination;
+    public Date getDateVaccination() {
+        return dateVaccination;
     }
 
-    public void setDate_vaccination(Date date_vaccination) {
-        this.date_vaccination = date_vaccination;
+    public void setDateVaccination(Date dateVaccination) {
+        this.dateVaccination = dateVaccination;
     }
 
     public int getNbrJoursProchain() {

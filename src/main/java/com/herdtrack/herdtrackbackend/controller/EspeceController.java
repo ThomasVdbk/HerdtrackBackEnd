@@ -1,6 +1,7 @@
 package com.herdtrack.herdtrackbackend.controller;
 
 import com.herdtrack.herdtrackbackend.entity.Espece;
+import com.herdtrack.herdtrackbackend.entity.Race;
 import com.herdtrack.herdtrackbackend.service.EspeceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -91,6 +92,13 @@ public class EspeceController {
     @ResponseStatus(code=HttpStatus.ACCEPTED)
     public Espece delete(@PathVariable Long id) {
         return this.especeService.delete(id);
+    }
+
+
+    @GetMapping("races/{id}")
+    @ResponseStatus(code = HttpStatus.OK)
+    public List<Race> findEspeceById(Long id) {
+        return this.especeService.findEspeceById(id);
     }
 }
 

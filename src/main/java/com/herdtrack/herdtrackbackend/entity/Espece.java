@@ -23,7 +23,6 @@ public class Espece {
 
 // Création d'une relation entre les tables Espece et Race.
     @OneToMany(mappedBy = "espece", fetch = FetchType.LAZY)
-    @JsonIgnore
     private List<Race> races = new ArrayList<Race>();
 
     public Espece() {

@@ -79,7 +79,7 @@ public class VaccinController {
     /**
      * Il renvoie une liste de vaccins par date.
      *
-     * @param date_vaccination La date du vaccin
+     * @param dateVaccination La date du vaccin
      * @return Une liste d'objets Vaccin
      */
 
@@ -88,7 +88,7 @@ public class VaccinController {
 
     @GetMapping("/date/{date_vaccination}")
     @ResponseStatus(code = HttpStatus.OK)
-    public List<Vaccin> findByDate (@PathVariable Date date_vaccination){return this.vaccinService.findByDate_vaccination(date_vaccination);}
+    public List<Vaccin> findByDate (@PathVariable Date dateVaccination){return this.vaccinService.findByDateVaccination(dateVaccination);}
 
 
     /**

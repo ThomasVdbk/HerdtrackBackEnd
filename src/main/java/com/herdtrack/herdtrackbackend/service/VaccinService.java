@@ -63,12 +63,12 @@ public class VaccinService {
     /**
      * > Retrouvez tous les vaccins qui ont été administrés à une date précise
      *
-     * @param date_vaccination La date du vaccin
+     * @param dateVaccination La date du vaccin
      * @return Une liste d'objets Vaccin
      */
 
-    public List<Vaccin> findByDate_vaccination (Date date_vaccination){
-        return this.vaccinRepo.findByDate_vaccination(date_vaccination);
+    public List<Vaccin> findByDateVaccination (Date dateVaccination){
+        return this.vaccinRepo.findByDateVaccination(dateVaccination);
    }
 
     /**

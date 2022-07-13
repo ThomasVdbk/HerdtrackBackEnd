@@ -36,8 +36,8 @@ public interface VaccinRepo extends JpaRepository<Vaccin, Long> {
      * @return Une liste d'objets Vaccin
      */
 
-    @Query("select v from Vaccin v where v.date_vaccination=:date_vaccination")
-  List<Vaccin> findByDate_vaccination (Date date_vaccination);
+    @Query("select v from Vaccin v where v.dateVaccination=:dateVaccination")
+  List<Vaccin> findByDateVaccination (Date dateVaccination);
 
 
 

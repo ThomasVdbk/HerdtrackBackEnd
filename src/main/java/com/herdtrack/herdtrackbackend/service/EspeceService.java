@@ -1,12 +1,14 @@
 package com.herdtrack.herdtrackbackend.service;
 
 import com.herdtrack.herdtrackbackend.entity.Espece;
+import com.herdtrack.herdtrackbackend.entity.Race;
 import com.herdtrack.herdtrackbackend.repository.EspeceRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.security.PublicKey;
 import java.util.List;
 import java.util.Optional;
 
@@ -87,5 +89,9 @@ public class EspeceService {
         }
 
         return especeDel;
+    }
+
+    public List<Race> findEspeceById(Long id){
+       return this.especeRepo.findEspeceById(id);
     }
 }
