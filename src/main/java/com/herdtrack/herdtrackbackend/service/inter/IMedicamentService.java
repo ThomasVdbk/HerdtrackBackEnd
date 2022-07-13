@@ -1,4 +1,4 @@
-package com.herdtrack.herdtrackbackend.service;
+package com.herdtrack.herdtrackbackend.service.inter;
 
 import com.herdtrack.herdtrackbackend.entity.Medicament;
 

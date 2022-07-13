@@ -2,8 +2,7 @@ package com.herdtrack.herdtrackbackend.controller;
 
 
 import com.herdtrack.herdtrackbackend.entity.Vaccin;
-import com.herdtrack.herdtrackbackend.service.IVaccinService;
-import com.herdtrack.herdtrackbackend.service.VaccinService;
+import com.herdtrack.herdtrackbackend.service.inter.IVaccinService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

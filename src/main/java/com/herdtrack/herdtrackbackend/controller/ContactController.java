@@ -1,8 +1,7 @@
 package com.herdtrack.herdtrackbackend.controller;
 
 import com.herdtrack.herdtrackbackend.entity.Contact;
-import com.herdtrack.herdtrackbackend.service.ContactService;
-import com.herdtrack.herdtrackbackend.service.IContactService;
+import com.herdtrack.herdtrackbackend.service.inter.IContactService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

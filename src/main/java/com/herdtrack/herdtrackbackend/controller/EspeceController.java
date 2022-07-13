@@ -2,8 +2,7 @@ package com.herdtrack.herdtrackbackend.controller;
 
 import com.herdtrack.herdtrackbackend.entity.Espece;
 import com.herdtrack.herdtrackbackend.entity.Race;
-import com.herdtrack.herdtrackbackend.service.EspeceService;
-import com.herdtrack.herdtrackbackend.service.IEspeceService;
+import com.herdtrack.herdtrackbackend.service.inter.IEspeceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
