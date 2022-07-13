@@ -1,8 +1,9 @@
 package com.herdtrack.herdtrackbackend.entity;
 
+
+
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
-import java.util.Date;
+import java.sql.Date;
 
 
 @Entity
@@ -22,12 +23,11 @@ public class Vaccin {
 
     // Création d'une colonne dans la base de données appelée numero_lot et elle n'est pas nullable.
     @Column(name = "numero_lot", length = 45,nullable = false)
-    private String numero_lot;
+    private String numeroLot;
 
 
     // Le code ci-dessus crée une colonne dans la base de données appelée date_vaccination et il n'est pas nullable.
     @Column(name = "date_vaccination",nullable = false)
-    @Temporal(TemporalType.DATE)
     private Date date_vaccination;
 
 
@@ -42,18 +42,18 @@ public class Vaccin {
 
 
     // Un constructeur.
-    public Vaccin(String libelle, String numero_lot, Date date_vaccination, int nbrDaysNext) {
+    public Vaccin(String libelle, String numeroLot, Date date_vaccination, int nbrDaysNext) {
         this.libelle = libelle;
-        this.numero_lot = numero_lot;
+        this.numeroLot = numeroLot;
         this.date_vaccination = date_vaccination;
         this.nbrJoursProchain = nbrDaysNext;
     }
 
    // Un constructeur.
-     public Vaccin(Long id, String libelle, String numero_lot, Date date_vaccination, int nbrDaysNext) {
+     public Vaccin(Long id, String libelle, String numeroLot, Date date_vaccination, int nbrDaysNext) {
         this.id = id;
         this.libelle = libelle;
-        this.numero_lot = numero_lot;
+        this.numeroLot = numeroLot;
         this.date_vaccination = date_vaccination;
         this.nbrJoursProchain = nbrDaysNext;
     }
@@ -74,12 +74,12 @@ public class Vaccin {
         this.libelle = libelle;
     }
 
-    public String getNumero_lot() {
-        return numero_lot;
+    public String getNumeroLot() {
+        return numeroLot;
     }
 
-    public void setNumero_lot(String numero_lot) {
-        this.numero_lot = numero_lot;
+    public void setnumeroLot(String numeroLot) {
+        this.numeroLot = numeroLot;
     }
 
     public Date getDate_vaccination() {

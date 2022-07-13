@@ -87,7 +87,7 @@ public class EspeceController {
      * @param id l'id de l'espece à supprimer
      * @return L'espèce supprimée.
      */
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/supp/{id}")
     @ResponseStatus(code=HttpStatus.ACCEPTED)
     public Espece delete(@PathVariable Long id) {
         return this.especeService.delete(id);

@@ -72,7 +72,7 @@ public class RaceController {
      * @param id L'identifiant de la race à supprimer.
      * @return L'objet Race qui a été supprimé.
      */
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/supp/{id}")
     @ResponseStatus(code=HttpStatus.ACCEPTED)
     public Race delete(@PathVariable Long id) {
         return this.raceService.delete(id);

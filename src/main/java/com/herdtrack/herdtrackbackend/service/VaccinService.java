@@ -7,7 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -58,32 +58,26 @@ public class VaccinService {
      * @return Une liste d'objets Vaccin
      */
     public List<Vaccin> findByNumero (String numero_lot){
-        return this.vaccinRepo.findByNumero(numero_lot);
+        return this.vaccinRepo.findByNumeroLot(numero_lot);
     }
     /**
      * > Retrouvez tous les vaccins qui ont été administrés à une date précise
      *
-     * @param date La date du vaccin
+     * @param date_vaccination La date du vaccin
      * @return Une liste d'objets Vaccin
      */
-    public List<Vaccin> findByDate (Date date){
-        return this.vaccinRepo.findByDate(date);
-    }
-    /**
-     * > Cette fonction renvoie une liste des vaccins à venir dans les nbrJoursProchain jours à venir
-     *
-     * @param nbrJoursProchain le nombre de jours avant la prochaine vaccination
-     * @return Une liste d'objets Vaccin
-     */
-    public List<Vaccin> findByDays (int nbrJoursProchain){
-        return this.vaccinRepo.findByJours(nbrJoursProchain);
-    }
+
+    public List<Vaccin> findByDate_vaccination (Date date_vaccination){
+        return this.vaccinRepo.findByDate_vaccination(date_vaccination);
+   }
+
     /**
      * Créez un nouvel objet Vaccin et enregistrez-le dans la base de données.
      *
      * @param newVaccin L'objet Vaccin que nous voulons créer.
      * @return L'objet newVaccin est renvoyé.
      */
+
     public Vaccin create(Vaccin newVaccin) {
         return this.vaccinRepo.save(newVaccin);
     }
@@ -94,6 +88,7 @@ public class VaccinService {
      * @param vaccin l'objet qui sera mis à jour
      * @return Le vaccin mis à jour.
      */
+
     public Vaccin update(Vaccin vaccin) {
         if (! this.vaccinRepo.existsById(vaccin.getId())) {
             throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE,

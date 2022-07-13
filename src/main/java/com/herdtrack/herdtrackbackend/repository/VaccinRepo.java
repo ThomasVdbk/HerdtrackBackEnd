@@ -2,9 +2,10 @@ package com.herdtrack.herdtrackbackend.repository;
 
 import com.herdtrack.herdtrackbackend.entity.Vaccin;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
 
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 
 public interface VaccinRepo extends JpaRepository<Vaccin, Long> {
@@ -24,23 +25,20 @@ public interface VaccinRepo extends JpaRepository<Vaccin, Long> {
      * @return Une liste d'objets Vaccin
      */
 
-    List<Vaccin> findByNumero (String numero_lot);
+
+    @Query("select v from Vaccin v where v.numeroLot = :numeroLot")
+    List<Vaccin> findByNumeroLot (String numeroLot);
 
     /**
      * Trouvez tous les vaccins qui ont été administrés à une date précise.
      *
-     * @param "date" la date du vaccin
+     * @param "date_vaccination" la date du vaccin
      * @return Une liste d'objets Vaccin
      */
 
-    List<Vaccin> findByDate (Date date);
+    @Query("select v from Vaccin v where v.date_vaccination=:date_vaccination")
+  List<Vaccin> findByDate_vaccination (Date date_vaccination);
 
-    /**
-     * > Retrouvez tous les vaccins dus dans les nbrJoursProchain jours à venir
-     *
-     * @param nbrJoursProchain le nombre de jours avant la prochaine vaccination
-     * @return Une liste d'objets Vaccin
-     */
-    List<Vaccin> findByJours (int nbrJoursProchain);
+
 
 }

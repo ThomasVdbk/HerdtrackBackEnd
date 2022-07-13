@@ -96,7 +96,7 @@ public class ContactController {
      * @param id L'identifiant du contact à supprimer.
      * @return Le contact qui a été supprimé.
      */
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/supp/{id}")
     @ResponseStatus(code=HttpStatus.ACCEPTED)
     public Contact delete(@PathVariable Long id) {
         return this.contactService.delete(id);
