@@ -1,6 +1,4 @@
-package com.herdtrack.herdtrackbackend.Entity;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
+package com.herdtrack.herdtrackbackend.entity;
 
 import javax.persistence.*;
 import java.util.ArrayList;

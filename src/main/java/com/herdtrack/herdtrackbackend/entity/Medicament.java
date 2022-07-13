@@ -1,4 +1,4 @@
-package com.herdtrack.herdtrackbackend.Entity;
+package com.herdtrack.herdtrackbackend.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
