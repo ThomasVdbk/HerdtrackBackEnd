@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class ContactService {
+public class ContactService implements IContactService {
 
     // Injecter le ContactRepo dans le ContactService.
     @Autowired
@@ -22,6 +22,7 @@ public class ContactService {
  *
  * @return Une liste de tous les contacts dans la base de données.
  */
+@Override
 public List<Contact> findAll(){return this.contactRepo.findAll();}
 
     /**
@@ -30,6 +31,7 @@ public List<Contact> findAll(){return this.contactRepo.findAll();}
      * @param id L'identifiant du contact à récupérer.
      * @return Un objet facultatif.
      */
+    @Override
     public Contact findById(Long id) {
         Optional<Contact> optContact = this.contactRepo.findById(id);
         if (optContact.isPresent()) {
@@ -45,6 +47,7 @@ public List<Contact> findAll(){return this.contactRepo.findAll();}
  * @param nom le nom de la méthode
  * @return Une liste de contacts
  */
+@Override
 public List<Contact> findByNom(String nom){
         return this.contactRepo.findByNom(nom);
 }
@@ -56,6 +59,7 @@ public List<Contact> findByNom(String nom){
  * @param prenom le nom du paramètre dans la signature de la méthode
  * @return Une liste de contacts
  */
+@Override
 public List<Contact> findByPrenom(String prenom){
     return this.contactRepo.findByPrenom(prenom);
 }
@@ -66,6 +70,7 @@ public List<Contact> findByPrenom(String prenom){
  * @param relation La relation du contact.
  * @return Une liste de contacts
  */
+@Override
 public List<Contact> findByRelation(String relation){
 return this.contactRepo.findByRelation(relation);
 }
@@ -76,7 +81,8 @@ return this.contactRepo.findByRelation(relation);
  * @param phone Le numéro de téléphone à rechercher.
  * @return Une liste de contacts
  */
-public List<Contact> findByPhone (String phone){
+@Override
+public List<Contact> findByPhone(String phone){
     return  this.contactRepo.findByPhone(phone);
 }
 
@@ -86,6 +92,7 @@ public List<Contact> findByPhone (String phone){
      * @param newContact C'est l'objet que nous créons.
      * @return Le nouveau contact qui a été créé.
      */
+    @Override
     public Contact create(Contact newContact) {
         return this.contactRepo.save(newContact);
     }
@@ -96,6 +103,7 @@ public List<Contact> findByPhone (String phone){
      * @param contact l'objet contact à mettre à jour
      * @return Le contact mis à jour
      */
+    @Override
     public Contact update(Contact contact) {
         if (! this.contactRepo.existsById(contact.getId())) {
             throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE,
@@ -110,7 +118,8 @@ public List<Contact> findByPhone (String phone){
      * @param id l'id du contact à supprimer
      * @return Le contact supprimé
      */
-    public Contact delete (Long id) {
+    @Override
+    public Contact delete(Long id) {
         if (! this.contactRepo.existsById(id)) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND,
                     "impossible de trouver le contact à supprimer");

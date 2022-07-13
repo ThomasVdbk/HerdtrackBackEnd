@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class VaccinService {
+public class VaccinService implements IVaccinService {
 
     // Injecter le VaccinRepo dans le VaccinService.
     @Autowired
@@ -24,6 +24,7 @@ public class VaccinService {
      *
      * @return Une liste de tous les vaccins dans la base de données.
      */
+     @Override
      public List<Vaccin> findAll(){
         return this.vaccinRepo.findAll();
     }
@@ -33,6 +34,7 @@ public class VaccinService {
      * @param id L'identifiant du vaccin à récupérer.
      * @return Un objet de type Vaccin
      */
+    @Override
     public Vaccin findById(Long id) {
         Optional<Vaccin> optVaccin = this.vaccinRepo.findById(id);
         if (optVaccin.isPresent()) {
@@ -47,6 +49,7 @@ public class VaccinService {
      * @param libelle Nom du champ dans la classe Vaccin.
      * @return Une liste d'objets Vaccin
      */
+    @Override
     public List<Vaccin> findByLibelle(String libelle) {
         return this.vaccinRepo.findByLibelle(libelle);
     }
@@ -57,7 +60,8 @@ public class VaccinService {
      * @param numero_lot le numéro de lot du vaccin
      * @return Une liste d'objets Vaccin
      */
-    public List<Vaccin> findByNumero (String numero_lot){
+    @Override
+    public List<Vaccin> findByNumero(String numero_lot){
         return this.vaccinRepo.findByNumeroLot(numero_lot);
     }
     /**
@@ -67,7 +71,8 @@ public class VaccinService {
      * @return Une liste d'objets Vaccin
      */
 
-    public List<Vaccin> findByDateVaccination (Date dateVaccination){
+    @Override
+    public List<Vaccin> findByDateVaccination(Date dateVaccination){
         return this.vaccinRepo.findByDateVaccination(dateVaccination);
    }
 
@@ -78,6 +83,7 @@ public class VaccinService {
      * @return L'objet newVaccin est renvoyé.
      */
 
+    @Override
     public Vaccin create(Vaccin newVaccin) {
         return this.vaccinRepo.save(newVaccin);
     }
@@ -89,6 +95,7 @@ public class VaccinService {
      * @return Le vaccin mis à jour.
      */
 
+    @Override
     public Vaccin update(Vaccin vaccin) {
         if (! this.vaccinRepo.existsById(vaccin.getId())) {
             throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE,
@@ -103,7 +110,8 @@ public class VaccinService {
      * @param id l'id du contact à supprimer
      * @return L'objet supprimé
      */
-    public Vaccin delete (Long id) {
+    @Override
+    public Vaccin delete(Long id) {
         if (! this.vaccinRepo.existsById(id)) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND,
                     "impossible de trouver le vaccin à supprimer");

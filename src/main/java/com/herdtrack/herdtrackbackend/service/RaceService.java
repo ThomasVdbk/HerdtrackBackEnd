@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class RaceService {
+public class RaceService implements IRaceService {
 
     // Injecter le RaceRepo dans le RaceService.
     @Autowired
@@ -23,6 +23,7 @@ public class RaceService {
      *
      * @return Une liste de toutes les races dans la base de données.
      */
+     @Override
      public List<Race> findAll(){
         return this.raceRepo.findAll();
     }
@@ -32,6 +33,7 @@ public class RaceService {
      * @param id L'identifiant de la race à trouver
      * @return Un objet facultatif.
      */
+    @Override
     public Race findById(Long id) {
         Optional<Race> optRace = this.raceRepo.findById(id);
         if (optRace.isPresent()) {
@@ -46,6 +48,7 @@ public class RaceService {
  * @param libelle Le nom du paramètre dans la signature de la méthode.
  * @return Une liste de races
  */
+@Override
 public List<Race> findByLibelle(String libelle) {
     return this.raceRepo.findByLibelle(libelle);
 }
@@ -55,6 +58,7 @@ public List<Race> findByLibelle(String libelle) {
      * @param newRace L'objet Race en cours de création.
      * @return L'objet newRace est renvoyé.
      */
+    @Override
     public Race create(Race newRace) {
         return this.raceRepo.save(newRace);
     }
@@ -65,6 +69,7 @@ public List<Race> findByLibelle(String libelle) {
      * @param race l'objet Race à mettre à jour
      * @return La race mise à jour.
      */
+    @Override
     public Race update(Race race) {
         if (! this.raceRepo.existsById(race.getId())) {
             throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE,
@@ -79,7 +84,8 @@ public List<Race> findByLibelle(String libelle) {
      * @param id l'id de la race à supprimer
      * @return La race supprimée.
      */
-    public Race delete (Long id) {
+    @Override
+    public Race delete(Long id) {
         if (! this.raceRepo.existsById(id)) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND,
                     "impossible de trouver la race à supprimer");

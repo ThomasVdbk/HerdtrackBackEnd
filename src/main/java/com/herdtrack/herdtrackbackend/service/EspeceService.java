@@ -13,12 +13,13 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class EspeceService {
+public class EspeceService implements IEspeceService {
     @Autowired
     private EspeceRepo especeRepo;
 
 
     // Une méthode qui est utilisée pour trouver toutes les espèces dans la base de données.
+    @Override
     public List<Espece> findAll(){
         return this.especeRepo.findAll();
     }
@@ -29,6 +30,7 @@ public class EspeceService {
      * @param id l'identifiant de l'espèce à trouver
      * @return La méthode renvoie un objet Espece.
      */
+    @Override
     public Espece findById(Long id) {
         Optional<Espece> optEspece = this.especeRepo.findById(id);
         if (optEspece.isPresent()) {
@@ -44,6 +46,7 @@ public class EspeceService {
      * @param libelle Le nom du paramètre dans la signature de la méthode.
      * @return Une liste d'objets Espece
      */
+    @Override
     public List<Espece> findByLibelle(String libelle) {
         return this.especeRepo.findByLibelle(libelle);
     }
@@ -54,6 +57,7 @@ public class EspeceService {
      * @param newEspece Le nouvel objet Espece que nous voulons créer.
      * @return L'objet newEspece est renvoyé.
      */
+    @Override
     public Espece create(Espece newEspece) {
         return this.especeRepo.save(newEspece);
     }
@@ -63,6 +67,7 @@ public class EspeceService {
      * @param espece l'objet à mettre à jour
      * @return L'espece mis à jour.
      */
+    @Override
     public Espece update(Espece espece) {
         if (! this.especeRepo.existsById(espece.getId())) {
             throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE,
@@ -76,7 +81,8 @@ public class EspeceService {
      * @param id l'identifiant de l'espèce à supprimer
      * @return L'objet Espece supprimé.
      */
-    public Espece delete (Long id) {
+    @Override
+    public Espece delete(Long id) {
         if (! this.especeRepo.existsById(id)) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND,
                     "impossible de trouver l'espèce à supprimer");
@@ -91,6 +97,7 @@ public class EspeceService {
         return especeDel;
     }
 
+    @Override
     public List<Race> findEspeceById(Long id){
        return this.especeRepo.findEspeceById(id);
     }

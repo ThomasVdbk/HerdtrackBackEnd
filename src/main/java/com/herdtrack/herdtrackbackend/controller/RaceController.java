@@ -3,6 +3,7 @@ package com.herdtrack.herdtrackbackend.controller;
 
 import com.herdtrack.herdtrackbackend.entity.Espece;
 import com.herdtrack.herdtrackbackend.entity.Race;
+import com.herdtrack.herdtrackbackend.service.IRaceService;
 import com.herdtrack.herdtrackbackend.service.RaceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,7 +17,7 @@ import java.util.List;
 public class RaceController {
 
     @Autowired
-    private RaceService raceService;
+    private IRaceService raceService;
 
     /**
      * Cette fonction renvoie une liste de toutes les races dans la base de données

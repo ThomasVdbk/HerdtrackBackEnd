@@ -2,6 +2,7 @@ package com.herdtrack.herdtrackbackend.controller;
 
 
 import com.herdtrack.herdtrackbackend.entity.Vaccin;
+import com.herdtrack.herdtrackbackend.service.IVaccinService;
 import com.herdtrack.herdtrackbackend.service.VaccinService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -20,7 +21,7 @@ public class VaccinController {
 
 
     @Autowired
-    private VaccinService vaccinService;
+    private IVaccinService vaccinService;
 
 
 

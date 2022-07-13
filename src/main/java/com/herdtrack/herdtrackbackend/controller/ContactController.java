@@ -2,6 +2,7 @@ package com.herdtrack.herdtrackbackend.controller;
 
 import com.herdtrack.herdtrackbackend.entity.Contact;
 import com.herdtrack.herdtrackbackend.service.ContactService;
+import com.herdtrack.herdtrackbackend.service.IContactService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -16,7 +17,7 @@ public class ContactController {
 
     // Injecter le ContactService dans le ContactController.
     @Autowired
-    private ContactService contactService;
+    private IContactService contactService;
 
     /**
      * Cette fonction est une requête GET qui renvoie une liste de tous les contacts de la base de données
