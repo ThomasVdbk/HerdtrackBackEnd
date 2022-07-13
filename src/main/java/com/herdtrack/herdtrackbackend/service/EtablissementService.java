@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class EtablissementService {
+public class EtablissementService implements IEtablissementService {
 
     @Autowired
     private EtablissementRepository etablissementRepository;
@@ -21,6 +21,7 @@ public class EtablissementService {
     @return Etablissement List
     @author Nicolas Desdevises
     */
+    @Override
     public List<Etablissement> findAll() {
 
         return etablissementRepository.findAll();
@@ -32,6 +33,7 @@ public class EtablissementService {
      @return Etablissement
      @author Nicolas Desdevises
      */
+    @Override
     public Etablissement findById(Long id) {
 
         Optional<Etablissement> optEtablissement = this.etablissementRepository.findById(id);
@@ -48,6 +50,7 @@ public class EtablissementService {
      @return Etablissement
      @author Nicolas Desdevises
      */
+    @Override
     public Etablissement findByNumeroExploitation(String numeroExploitation) {
 
         return etablissementRepository.findByNumeroExploitation(numeroExploitation);
@@ -60,6 +63,7 @@ public class EtablissementService {
      @return Etablissement créé
      @author Nicolas Desdevises
      */
+    @Override
     public Etablissement create(Etablissement etablissement) {
 
         return this.etablissementRepository.save(etablissement);
@@ -71,6 +75,7 @@ public class EtablissementService {
      @return Etablissement mise à jour
      @author Nicolas Desdevises
      */
+    @Override
     public Etablissement update(Etablissement etablissement) {
 
         if (!this.etablissementRepository.existsById(etablissement.getId())) {

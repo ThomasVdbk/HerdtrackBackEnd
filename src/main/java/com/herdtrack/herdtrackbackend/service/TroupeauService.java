@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class TroupeauService {
+public class TroupeauService implements ITroupeauService {
 
     @Autowired
     private TroupeauRepository troupeauRepository;
@@ -21,6 +21,7 @@ public class TroupeauService {
     @return Troupeau List
     @author Nicolas Desdevises
     */
+    @Override
     public List<Troupeau> findAll() {
 
         return troupeauRepository.findAll();
@@ -32,6 +33,7 @@ public class TroupeauService {
     @return Troupeau
     @author Nicolas Desdevises
     */
+    @Override
     public Troupeau findById(Long id) {
 
         Optional<Troupeau> optTroupeau = this.troupeauRepository.findById(id);
@@ -48,6 +50,7 @@ public class TroupeauService {
     @return Troupeau créé
     @author Nicolas Desdevises
     */
+    @Override
     public Troupeau create(Troupeau troupeau) {
 
         return this.troupeauRepository.save(troupeau);
@@ -59,6 +62,7 @@ public class TroupeauService {
     @return Troupeau mise à jour
     @author Nicolas Desdevises
     */
+    @Override
     public Troupeau update(Troupeau troupeau) {
 
         if (!this.troupeauRepository.existsById(troupeau.getId())) {

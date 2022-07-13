@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class ParcService {
+public class ParcService implements IParcService {
 
     @Autowired
     private ParcRepository parcRepository;
@@ -21,6 +21,7 @@ public class ParcService {
     @return Parc List
     @author Nicolas Desdevises
     */
+    @Override
     public List<Parc> findAll() {
 
         return parcRepository.findAll();
@@ -32,6 +33,7 @@ public class ParcService {
     @return Parc
     @author Nicolas Desdevises
     */
+    @Override
     public Parc findById(Long id) {
 
         Optional<Parc> optParc = this.parcRepository.findById(id);
@@ -48,6 +50,7 @@ public class ParcService {
     @return Parc créé
     @author Nicolas Desdevises
     */
+    @Override
     public Parc create(Parc parc) {
 
         return this.parcRepository.save(parc);
@@ -59,6 +62,7 @@ public class ParcService {
     @return Parc mise à jour
     @author Nicolas Desdevises
     */
+    @Override
     public Parc update(Parc parc) {
 
         if (!this.parcRepository.existsById(parc.getId())) {
