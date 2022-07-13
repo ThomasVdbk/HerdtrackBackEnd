@@ -2,6 +2,7 @@ package com.herdtrack.herdtrackbackend.controller;
 
 import com.herdtrack.herdtrackbackend.entity.Animal;
 import com.herdtrack.herdtrackbackend.service.AnimalService;
+import com.herdtrack.herdtrackbackend.service.IAnimalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -14,7 +15,7 @@ import java.util.List;
 public class AnimalController {
 
     @Autowired
-    private AnimalService animalService;
+    private IAnimalService animalService;
 
     @GetMapping("")
     @ResponseStatus(code = HttpStatus.OK)

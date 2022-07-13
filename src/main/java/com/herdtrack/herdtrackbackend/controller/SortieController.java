@@ -2,6 +2,7 @@ package com.herdtrack.herdtrackbackend.controller;
 
 import com.herdtrack.herdtrackbackend.entity.Raison;
 import com.herdtrack.herdtrackbackend.entity.Sortie;
+import com.herdtrack.herdtrackbackend.service.ISortieService;
 import com.herdtrack.herdtrackbackend.service.SortieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,7 +17,7 @@ import java.util.List;
 public class SortieController {
 
     @Autowired
-    private SortieService sortieService;
+    private ISortieService sortieService;
 
 
     @GetMapping("")

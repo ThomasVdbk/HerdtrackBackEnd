@@ -16,12 +16,10 @@ public class Animal {
     @Column(name = "nom", length = 20)
     private String nom;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "entree_id")
+    @OneToOne(mappedBy = "entree")
     private Entree entree;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "sortie_id")
+    @OneToOne(mappedBy = "sortie")
     private Sortie sortie;
 
 

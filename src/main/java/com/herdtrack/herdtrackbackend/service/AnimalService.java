@@ -11,14 +11,16 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class AnimalService {
+public class AnimalService implements IAnimalService {
     @Autowired
     private AnimalRepo animalRepo;
 
+    @Override
     public List<Animal> findAll() {
         return this.animalRepo.findAll();
     }
 
+    @Override
     public Animal findById(Long id) {
         Optional<Animal> optAnimal = this.animalRepo.findById(id);
         if (optAnimal.isPresent()) {
@@ -28,18 +30,22 @@ public class AnimalService {
         }
     }
 
+    @Override
     public List<Animal> findByReference(String reference) {
         return this.animalRepo.findByReference(reference);
     }
 
+    @Override
     public List<Animal> findByNom(String nom) {
         return this.animalRepo.findByNom(nom);
     }
 
+    @Override
     public Animal create(Animal newAdresse) {
         return this.animalRepo.save(newAdresse);
     }
 
+    @Override
     public Animal update(Animal animal) {
         if (!this.animalRepo.existsById(animal.getId())) {
             throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE,
@@ -48,6 +54,7 @@ public class AnimalService {
         return this.animalRepo.save(animal);
     }
 
+    @Override
     public Animal delete(Long id) {
         if (!this.animalRepo.existsById(id)) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND,

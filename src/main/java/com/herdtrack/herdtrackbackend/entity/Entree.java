@@ -19,6 +19,9 @@ public class Entree {
     @Enumerated(EnumType.STRING)
     private Raison raison;
 
+    @OneToOne
+    private Animal animal;
+
 
     public Entree() {
         super();

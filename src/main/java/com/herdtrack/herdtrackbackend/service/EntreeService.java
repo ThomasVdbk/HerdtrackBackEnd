@@ -15,17 +15,19 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class EntreeService {
+public class EntreeService implements IEntreeService {
 
     @Autowired
     private EntreeRepo entreeRepo;
 
 
+    @Override
     public List<Entree> findAll() {
         return this.entreeRepo.findAll();
     }
 
 
+    @Override
     public Entree findById(Long id) {
         Optional<Entree> optEntree = this.entreeRepo.findById(id);
         if (optEntree.isPresent()) {
@@ -35,18 +37,22 @@ public class EntreeService {
         }
     }
 
+    @Override
     public List<Entree> findByDate(Date date) {
         return this.entreeRepo.findByDate(date);
     }
 
+    @Override
     public List<Entree> findByRaison(Raison raison) {
         return this.entreeRepo.findByRaison(raison);
     }
 
+    @Override
     public Entree create(Entree newEntree) {
         return this.entreeRepo.save(newEntree);
     }
 
+    @Override
     public Entree update(Entree entree) {
         if (!this.entreeRepo.existsById(entree.getId())) {
             throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE,
@@ -55,6 +61,7 @@ public class EntreeService {
         return this.entreeRepo.save(entree);
     }
 
+    @Override
     public Entree delete(Long id) {
         if (!this.entreeRepo.existsById(id)) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND,

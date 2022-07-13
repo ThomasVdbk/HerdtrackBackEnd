@@ -13,17 +13,19 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class SortieService {
+public class SortieService implements ISortieService {
 
     @Autowired
     private SortieRepo sortieRepo;
 
 
+    @Override
     public List<Sortie> findAll() {
         return this.sortieRepo.findAll();
     }
 
 
+    @Override
     public Sortie findById(Long id) {
         Optional<Sortie> optEntree = this.sortieRepo.findById(id);
         if (optEntree.isPresent()) {
@@ -33,18 +35,22 @@ public class SortieService {
         }
     }
 
+    @Override
     public List<Sortie> findByDate(Date date) {
         return this.sortieRepo.findByDate(date);
     }
 
+    @Override
     public List<Sortie> findByRaison(Raison raison) {
         return this.sortieRepo.findByRaison(raison);
     }
 
+    @Override
     public Sortie create(Sortie newSortie) {
         return this.sortieRepo.save(newSortie);
     }
 
+    @Override
     public Sortie update(Sortie sortie) {
         if (!this.sortieRepo.existsById(sortie.getId())) {
             throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE,
@@ -53,6 +59,7 @@ public class SortieService {
         return this.sortieRepo.save(sortie);
     }
 
+    @Override
     public Sortie delete(Long id) {
         if (!this.sortieRepo.existsById(id)) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND,
