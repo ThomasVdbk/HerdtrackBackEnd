@@ -1,7 +1,7 @@
 package com.herdtrack.herdtrackbackend.controller;
 
 import com.herdtrack.herdtrackbackend.entity.Eleveur;
-import com.herdtrack.herdtrackbackend.service.EleveurService;
+import com.herdtrack.herdtrackbackend.service.IEleveurService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -13,7 +13,7 @@ import java.util.List;
 public class EleveurController {
 
     @Autowired
-    private EleveurService eleveurService;
+    private IEleveurService eleveurService;
 
     @GetMapping("")
     @ResponseStatus(code = HttpStatus.OK)

@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class EleveurService {
+public class EleveurService implements IEleveurService {
 
     @Autowired
     private EleveurRepository eleveurRepository;
@@ -21,6 +21,7 @@ public class EleveurService {
     @return Eleveur List
     @author Nicolas Desdevises
     */
+    @Override
     public List<Eleveur> findAll() {
 
         return eleveurRepository.findAll();
@@ -32,6 +33,7 @@ public class EleveurService {
      @return Eleveur
      @author Nicolas Desdevises
      */
+    @Override
     public Eleveur findById(Long id) {
 
         Optional<Eleveur> optEleveur = this.eleveurRepository.findById(id);
@@ -48,6 +50,7 @@ public class EleveurService {
     @return Etablissement créé
     @author Nicolas Desdevises
     */
+    @Override
     public Eleveur create(Eleveur eleveur) {
 
         return this.eleveurRepository.save(eleveur);
@@ -59,6 +62,7 @@ public class EleveurService {
     @return Etablissement mise à jour
     @author Nicolas Desdevises
     */
+    @Override
     public Eleveur update(Eleveur eleveur) {
 
         if (!this.eleveurRepository.existsById(eleveur.getId())) {
