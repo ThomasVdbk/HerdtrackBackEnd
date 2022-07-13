@@ -1,6 +1,6 @@
 package com.herdtrack.herdtrackbackend.controller;
 
-
+import com.herdtrack.herdtrackbackend.entity.Raison;
 import com.herdtrack.herdtrackbackend.entity.Sortie;
 import com.herdtrack.herdtrackbackend.service.SortieService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +37,12 @@ public class SortieController {
     @ResponseStatus(code = HttpStatus.OK)
     public List<Sortie> findByDate(@PathVariable Date date) {
         return this.sortieService.findByDate(date);
+    }
+
+    @GetMapping("/Raison/{raison}")
+    @ResponseStatus(code = HttpStatus.OK)
+    public List<Sortie> findByRaison(@PathVariable Raison raison) {
+        return this.sortieService.findByRaison(raison);
     }
 
     ;

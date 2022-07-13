@@ -3,6 +3,7 @@ package com.herdtrack.herdtrackbackend.service;
 
 import com.herdtrack.herdtrackbackend.entity.Entree;
 
+import com.herdtrack.herdtrackbackend.entity.Raison;
 import com.herdtrack.herdtrackbackend.repository.EntreeRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -36,6 +37,10 @@ public class EntreeService {
 
     public List<Entree> findByDate(Date date) {
         return this.entreeRepo.findByDate(date);
+    }
+
+    public List<Entree> findByRaison(Raison raison) {
+        return this.entreeRepo.findByRaison(raison);
     }
 
     public Entree create(Entree newEntree) {

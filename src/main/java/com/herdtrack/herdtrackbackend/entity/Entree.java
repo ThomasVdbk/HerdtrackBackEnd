@@ -7,6 +7,7 @@ import java.util.Date;
 @Table(name = "entree")
 public class Entree {
 
+
     @Id
     @GeneratedValue
     private Long id;
@@ -14,13 +15,19 @@ public class Entree {
     @Column(name = "dateEntree")
     private Date date;
 
+    @Column(name = "raisonEntree", length = 20)
+    @Enumerated(EnumType.STRING)
+    private Raison raison;
+
+
     public Entree() {
         super();
     }
 
-    public Entree(Long id, Date date) {
+    public Entree(Long id, Date date, Raison raison) {
         this.id = id;
         this.date = date;
+        this.raison = raison;
     }
 
     public Long getId() {
@@ -37,5 +44,13 @@ public class Entree {
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public Raison getRaison() {
+        return raison;
+    }
+
+    public void setRaison(Raison raison) {
+        this.raison = raison;
     }
 }

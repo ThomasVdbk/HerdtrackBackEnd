@@ -16,6 +16,15 @@ public class Animal {
     @Column(name = "nom", length = 20)
     private String nom;
 
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "entree_id")
+    private Entree entree;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "sortie_id")
+    private Sortie sortie;
+
+
     public Animal() {
         super();
     }
@@ -57,5 +66,21 @@ public class Animal {
 
     public void setNom(String nom) {
         this.nom = nom;
+    }
+
+    public Entree getEntree() {
+        return entree;
+    }
+
+    public void setEntree(Entree entree) {
+        this.entree = entree;
+    }
+
+    public Sortie getSortie() {
+        return sortie;
+    }
+
+    public void setSortie(Sortie sortie) {
+        this.sortie = sortie;
     }
 }

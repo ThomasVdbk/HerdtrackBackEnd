@@ -1,6 +1,7 @@
 package com.herdtrack.herdtrackbackend.controller;
 
 import com.herdtrack.herdtrackbackend.entity.Entree;
+import com.herdtrack.herdtrackbackend.entity.Raison;
 import com.herdtrack.herdtrackbackend.service.EntreeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -37,7 +38,11 @@ public class EntreeController {
         return this.entreeService.findByDate(date);
     }
 
-    ;
+    @GetMapping("/Raison/{raison}")
+    @ResponseStatus(code = HttpStatus.OK)
+    public List<Entree> findByRaison(@PathVariable Raison raison) {
+        return this.entreeService.findByRaison(raison);
+    }
 
 
     @PostMapping("")
@@ -62,4 +67,6 @@ public class EntreeController {
     public Entree delete(@PathVariable Long id) {
         return this.entreeService.delete(id);
     }
+
+
 }

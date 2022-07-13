@@ -1,8 +1,8 @@
 package com.herdtrack.herdtrackbackend.entity;
 
 public enum Raison {
-    Naissance("naissance"), Achat("achat"), Vente("vente"), Deces("deces"), Perdu("perdu"), Vol("vol");
 
+    Naissance("naissance"), Achat("achat"), Vente("vente"), Deces("deces"), Perdu("perdu"), Vol("vol");
 
     private final String label;
 

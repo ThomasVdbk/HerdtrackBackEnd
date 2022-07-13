@@ -31,6 +31,7 @@ public class AnimalService {
     public List<Animal> findByReference(String reference) {
         return this.animalRepo.findByReference(reference);
     }
+
     public List<Animal> findByNom(String nom) {
         return this.animalRepo.findByNom(nom);
     }

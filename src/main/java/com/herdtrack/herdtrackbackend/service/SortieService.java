@@ -1,5 +1,6 @@
 package com.herdtrack.herdtrackbackend.service;
 
+import com.herdtrack.herdtrackbackend.entity.Raison;
 import com.herdtrack.herdtrackbackend.entity.Sortie;
 import com.herdtrack.herdtrackbackend.repository.SortieRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +35,10 @@ public class SortieService {
 
     public List<Sortie> findByDate(Date date) {
         return this.sortieRepo.findByDate(date);
+    }
+
+    public List<Sortie> findByRaison(Raison raison) {
+        return this.sortieRepo.findByRaison(raison);
     }
 
     public Sortie create(Sortie newSortie) {
