@@ -25,6 +25,10 @@ public class Eleveur {
     @JsonIgnore
     private List<Etablissement> etablissements;
 
+    @OneToMany(mappedBy = "eleveur", fetch = FetchType.LAZY)
+    @JsonIgnore
+    private List<Animal> animals;
+
     public Eleveur() {
     }
 
@@ -58,5 +62,13 @@ public class Eleveur {
 
     public void setEtablissements(List<Etablissement> etablissements) {
         this.etablissements = etablissements;
+    }
+
+    public List<Animal> getAnimals() {
+        return animals;
+    }
+
+    public void setAnimals(List<Animal> animals) {
+        this.animals = animals;
     }
 }
