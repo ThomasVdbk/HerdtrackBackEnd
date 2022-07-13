@@ -5,6 +5,7 @@ import com.herdtrack.herdtrackbackend.entity.Entree;
 
 import com.herdtrack.herdtrackbackend.entity.Raison;
 import com.herdtrack.herdtrackbackend.repository.EntreeRepo;
+import com.herdtrack.herdtrackbackend.service.inter.IEntreeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;

@@ -3,12 +3,12 @@ package com.herdtrack.herdtrackbackend.service;
 import com.herdtrack.herdtrackbackend.entity.Espece;
 import com.herdtrack.herdtrackbackend.entity.Race;
 import com.herdtrack.herdtrackbackend.repository.EspeceRepo;
+import com.herdtrack.herdtrackbackend.service.inter.IEspeceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.security.PublicKey;
 import java.util.List;
 import java.util.Optional;
 

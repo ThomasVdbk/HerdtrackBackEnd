@@ -1,7 +1,7 @@
 package com.herdtrack.herdtrackbackend.controller;
 
 import com.herdtrack.herdtrackbackend.entity.Medicament;
-import com.herdtrack.herdtrackbackend.service.IMedicamentService;
+import com.herdtrack.herdtrackbackend.service.inter.IMedicamentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

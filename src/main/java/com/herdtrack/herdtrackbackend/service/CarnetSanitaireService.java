@@ -2,6 +2,7 @@ package com.herdtrack.herdtrackbackend.service;
 
 import com.herdtrack.herdtrackbackend.entity.CarnetSanitaire;
 import com.herdtrack.herdtrackbackend.repository.CarnetSanitaireRepo;
+import com.herdtrack.herdtrackbackend.service.inter.ICarnetSanitaireService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;

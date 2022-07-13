@@ -1,8 +1,8 @@
 package com.herdtrack.herdtrackbackend.service;
 
-import com.herdtrack.herdtrackbackend.entity.Espece;
 import com.herdtrack.herdtrackbackend.entity.Race;
 import com.herdtrack.herdtrackbackend.repository.RaceRepo;
+import com.herdtrack.herdtrackbackend.service.inter.IRaceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;

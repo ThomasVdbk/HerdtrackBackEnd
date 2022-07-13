@@ -1,7 +1,7 @@
 package com.herdtrack.herdtrackbackend.controller;
 
 import com.herdtrack.herdtrackbackend.entity.Parc;
-import com.herdtrack.herdtrackbackend.service.IParcService;
+import com.herdtrack.herdtrackbackend.service.inter.IParcService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

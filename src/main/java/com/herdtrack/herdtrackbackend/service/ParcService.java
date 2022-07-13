@@ -2,6 +2,7 @@ package com.herdtrack.herdtrackbackend.service;
 
 import com.herdtrack.herdtrackbackend.entity.Parc;
 import com.herdtrack.herdtrackbackend.repository.ParcRepository;
+import com.herdtrack.herdtrackbackend.service.inter.IParcService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
