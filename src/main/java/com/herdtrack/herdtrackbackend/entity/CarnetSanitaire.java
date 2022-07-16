@@ -26,6 +26,13 @@ public class CarnetSanitaire {
     private List<Traitement> traitements= new ArrayList<Traitement>();
 
     /**
+     * Relation entre carnet sanitaire et race
+     * @Author Alexandre Dessoly
+     */
+    @ManyToOne
+    private Race race;
+
+    /**
      * Constructor carnet sanitaire
      * @author Alexandre Dessoly
      */
