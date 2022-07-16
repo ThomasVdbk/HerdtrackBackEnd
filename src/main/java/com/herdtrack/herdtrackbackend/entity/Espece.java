@@ -25,6 +25,9 @@ public class Espece {
     @OneToMany(mappedBy = "espece", fetch = FetchType.LAZY)
     private List<Race> races = new ArrayList<Race>();
 
+
+    @OneToMany(mappedBy = "espece", fetch = FetchType.LAZY)
+    private List<Troupeau> troupeaux = new ArrayList<Troupeau>();
     public Espece() {
     }
 

@@ -1,5 +1,7 @@
 package com.herdtrack.herdtrackbackend.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
@@ -25,6 +27,8 @@ public class CarnetSanitaire {
     @ManyToMany(fetch = FetchType.LAZY)
     private List<Traitement> traitements= new ArrayList<Traitement>();
 
+    @ManyToMany(fetch = FetchType.LAZY)
+    private List<Vaccin> vaccins= new ArrayList<Vaccin>();
     /**
      * Constructor carnet sanitaire
      * @author Alexandre Dessoly

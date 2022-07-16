@@ -1,6 +1,8 @@
 package com.herdtrack.herdtrackbackend.entity;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Entity
@@ -23,6 +25,9 @@ public class Race {
 @ManyToOne
 @JoinColumn(name = "espece_id")
  private Espece espece;
+
+
+
 
     // Un constructeur vide.
     public Race() {
