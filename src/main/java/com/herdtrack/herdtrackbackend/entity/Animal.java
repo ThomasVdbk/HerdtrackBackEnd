@@ -24,6 +24,10 @@ public class Animal {
     @JoinColumn(name = "sortie_id", referencedColumnName = "id")
     private Sortie sortie;
 
+    @OneToOne
+    @JoinColumn(name = "carnetsanitaire_id", referencedColumnName = "id")
+    private CarnetSanitaire carnetSanitaire;
+
 
     public Animal() {
         super();
