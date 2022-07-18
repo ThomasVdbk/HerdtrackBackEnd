@@ -3,6 +3,7 @@ package com.herdtrack.herdtrackbackend.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+
 import java.util.List;
 
 
@@ -28,6 +29,7 @@ public class Race {
  private Espece espece;
 
 
+
     /**
     * Relation entre carnet sanitaire et race
     * @Alexandre Dessoly
@@ -35,6 +37,7 @@ public class Race {
     @OneToMany(mappedBy = "race")
     @JsonIgnore
     private List<CarnetSanitaire> carnetSanitaires;
+
 
 
     // Un constructeur vide.

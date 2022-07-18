@@ -18,6 +18,10 @@ public class Troupeau {
     @ManyToOne
     private Parc parc;
 
+    @ManyToOne
+    @JoinColumn(name="espece_id")
+    private Espece espece;
+
     public Troupeau() {
     }
 
@@ -35,5 +39,13 @@ public class Troupeau {
 
     public void setParc(Parc parc) {
         this.parc = parc;
+    }
+
+    public Espece getEspece() {
+        return espece;
+    }
+
+    public void setEspece(Espece espece) {
+        this.espece = espece;
     }
 }
