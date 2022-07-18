@@ -21,9 +21,15 @@ public class Troupeau {
     @ManyToOne
     private Parc parc;
 
+
     @OneToMany(mappedBy = "troupeau", fetch = FetchType.LAZY)
     @JsonIgnore
     private List<Animal> animaux;
+
+    @ManyToOne
+    @JoinColumn(name="espece_id")
+    private Espece espece;
+
 
     public Troupeau() {
     }
@@ -44,11 +50,20 @@ public class Troupeau {
         this.parc = parc;
     }
 
+
     public List<Animal> getAnimaux() {
         return animaux;
     }
 
     public void setAnimaux(List<Animal> animaux) {
         this.animaux = animaux;
+
+    public Espece getEspece() {
+        return espece;
+    }
+
+    public void setEspece(Espece espece) {
+        this.espece = espece;
+
     }
 }

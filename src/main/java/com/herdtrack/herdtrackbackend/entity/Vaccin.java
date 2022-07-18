@@ -2,8 +2,12 @@ package com.herdtrack.herdtrackbackend.entity;
 
 
 
+import org.springframework.context.annotation.EnableMBeanExport;
+
 import javax.persistence.*;
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Entity
@@ -34,6 +38,8 @@ public class Vaccin {
     // Une colonne dans la base de données.
     @Column(name = "nbr_jours_prochain" , nullable = false)
     private int nbrJoursProchain;
+
+
 
 
     // Un constructeur par défaut.
