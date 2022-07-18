@@ -30,6 +30,13 @@ public class CarnetSanitaire {
     @ManyToMany(fetch = FetchType.LAZY)
     private List<Vaccin> vaccins= new ArrayList<Vaccin>();
     /**
+     * Relation entre carnet sanitaire et race
+     * @Author Alexandre Dessoly
+     */
+    @ManyToOne
+    private Race race;
+
+    /**
      * Constructor carnet sanitaire
      * @author Alexandre Dessoly
      */
