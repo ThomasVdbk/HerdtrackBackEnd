@@ -1,5 +1,7 @@
 package com.herdtrack.herdtrackbackend.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -21,6 +23,7 @@ public class Parc {
     @Column(name = "quarantaine", nullable = false)
     private boolean quarantaine;
     @OneToMany(mappedBy = "parc", fetch = FetchType.LAZY)
+    @JsonIgnore
     private List<Troupeau> troupeaux;
     @ManyToOne
     private StatutSante statutSante;
