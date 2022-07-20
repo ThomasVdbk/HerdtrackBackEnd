@@ -12,7 +12,7 @@ import java.util.Date;
 import java.util.List;
 
 @RestController
-@RequestMapping("/entree")
+@RequestMapping("/entrees")
 public class EntreeController {
     @Autowired
     private IEntreeService entreeService;
@@ -29,8 +29,6 @@ public class EntreeController {
     public Entree findById(@PathVariable Long id) {
         return this.entreeService.findById(id);
     }
-
-    ;
 
     @GetMapping("/date/{date}")
     @ResponseStatus(code = HttpStatus.OK)
@@ -50,8 +48,6 @@ public class EntreeController {
     public Entree create(@RequestBody Entree newEntree) {
         return this.entreeService.create(newEntree);
     }
-
-    ;
 
     @PostMapping("/{id}")
     @ResponseStatus(code = HttpStatus.ACCEPTED)

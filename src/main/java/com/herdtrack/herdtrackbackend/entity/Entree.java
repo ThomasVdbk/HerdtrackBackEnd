@@ -12,10 +12,11 @@ public class Entree {
     @GeneratedValue
     private Long id;
 
-    @Column(name = "dateEntree")
+    @Column(name = "date")
+    @Temporal(TemporalType.DATE)
     private Date date;
 
-    @Column(name = "raisonEntree", length = 20)
+    @Column(name = "raison")
     @Enumerated(EnumType.STRING)
     private Raison raison;
 
@@ -24,11 +25,15 @@ public class Entree {
 
 
     public Entree() {
-        super();
     }
 
     public Entree(Long id, Date date, Raison raison) {
         this.id = id;
+        this.date = date;
+        this.raison = raison;
+    }
+
+    public Entree(Date date, Raison raison) {
         this.date = date;
         this.raison = raison;
     }
