@@ -43,6 +43,7 @@ public class AnimalController {
     @PostMapping("")
     @ResponseStatus(code = HttpStatus.CREATED)
     public Animal create(@RequestBody Animal newAnimal) {
+
         return this.animalService.create(newAnimal);
     }
 

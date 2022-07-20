@@ -9,8 +9,7 @@ public class Animal {
     @Id
     @GeneratedValue
     private Long id;
-    @Version
-    private int version;
+
     @Column(name = "reference", length = 255)
     private String reference;
     @Column(name = "nom", length = 20)
@@ -53,7 +52,6 @@ public class Animal {
 
     public Animal(Long id, int version, String reference, String nom) {
         this.id = id;
-        this.version = version;
         this.reference = reference;
         this.nom = nom;
     }
@@ -64,14 +62,6 @@ public class Animal {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public int getVersion() {
-        return version;
-    }
-
-    public void setVersion(int version) {
-        this.version = version;
     }
 
     public String getReference() {

@@ -12,9 +12,10 @@ public class Sortie {
     @GeneratedValue
     private Long id;
 
-    @Column(name = "dateSortie", length = 20)
+    @Column(name = "dateSortie")
+    @Temporal(TemporalType.DATE)
     private Date date;
-    @Column(name = "raisonSortie", length = 20)
+    @Column(name = "raisonSortie")
     @Enumerated(EnumType.STRING)
     private Raison raison;
 

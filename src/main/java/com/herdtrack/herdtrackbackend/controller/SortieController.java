@@ -12,7 +12,7 @@ import java.util.Date;
 import java.util.List;
 
 @RestController
-@RequestMapping("/sortie")
+@RequestMapping("/sorties")
 public class SortieController {
 
     @Autowired
