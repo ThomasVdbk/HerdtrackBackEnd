@@ -27,7 +27,7 @@ public class Troupeau {
     private List<Animal> animaux;
 
     @ManyToOne
-    @JoinColumn(name="espece_id")
+    @JoinColumn(name = "espece_id")
     private Espece espece;
 
 
@@ -57,6 +57,7 @@ public class Troupeau {
 
     public void setAnimaux(List<Animal> animaux) {
         this.animaux = animaux;
+    }
 
     public Espece getEspece() {
         return espece;
@@ -64,6 +65,5 @@ public class Troupeau {
 
     public void setEspece(Espece espece) {
         this.espece = espece;
-
     }
 }

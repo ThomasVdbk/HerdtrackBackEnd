@@ -35,17 +35,16 @@ public class Animal {
 
 
     @ManyToOne
-    @JoinColumn(name = "eleveur_id",referencedColumnName = "id")
+    @JoinColumn(name = "eleveur_id", referencedColumnName = "id")
     private Eleveur eleveur;
 
     @OneToOne
-    @JoinColumn(name = "statut_sante_id",referencedColumnName = "id")
+    @JoinColumn(name = "statut_sante_id", referencedColumnName = "id")
     private StatutSante statutSante;
 
     @ManyToOne
-    @JoinColumn(name = "espece_id",referencedColumnName = "id")
+    @JoinColumn(name = "espece_id", referencedColumnName = "id")
     private Espece espece;
-
 
 
     public Animal() {
@@ -112,8 +111,13 @@ public class Animal {
         return troupeau;
     }
 
-    public void setTroupeau(Troupeau troupeau) {
-        this.troupeau = troupeau;
+    public CarnetSanitaire getCarnetSanitaire() {
+        return carnetSanitaire;
+    }
+
+    public void setCarnetSanitaire(CarnetSanitaire carnetSanitaire) {
+        this.carnetSanitaire = carnetSanitaire;
+    }
 
     public Eleveur getEleveur() {
         return eleveur;
@@ -137,6 +141,11 @@ public class Animal {
 
     public void setEspece(Espece espece) {
         this.espece = espece;
+    }
+
+    public void setTroupeau(Troupeau troupeau) {
+        this.troupeau = troupeau;
+
 
     }
 }
