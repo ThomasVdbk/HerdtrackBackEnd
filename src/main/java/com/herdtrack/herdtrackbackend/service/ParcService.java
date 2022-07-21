@@ -1,7 +1,7 @@
 package com.herdtrack.herdtrackbackend.service;
 
 import com.herdtrack.herdtrackbackend.entity.Parc;
-import com.herdtrack.herdtrackbackend.repository.ParcRepository;
+import com.herdtrack.herdtrackbackend.repository.ParcRepo;
 import com.herdtrack.herdtrackbackend.service.inter.IParcService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,7 +15,7 @@ import java.util.Optional;
 public class ParcService implements IParcService {
 
     @Autowired
-    private ParcRepository parcRepository;
+    private ParcRepo parcRepo;
 
     /*
     methode qui retourne la liste de l'ensemble des parcs
@@ -25,7 +25,7 @@ public class ParcService implements IParcService {
     @Override
     public List<Parc> findAll() {
 
-        return parcRepository.findAll();
+        return parcRepo.findAll();
     }
 
     /*
@@ -37,7 +37,7 @@ public class ParcService implements IParcService {
     @Override
     public Parc findById(Long id) {
 
-        Optional<Parc> optParc = this.parcRepository.findById(id);
+        Optional<Parc> optParc = this.parcRepo.findById(id);
         if (optParc.isPresent()) {
             return optParc.get();
         } else {
@@ -54,7 +54,7 @@ public class ParcService implements IParcService {
     @Override
     public Parc create(Parc parc) {
 
-        return this.parcRepository.save(parc);
+        return this.parcRepo.save(parc);
     }
 
     /*
@@ -66,11 +66,11 @@ public class ParcService implements IParcService {
     @Override
     public Parc update(Parc parc) {
 
-        if (!this.parcRepository.existsById(parc.getId())) {
+        if (!this.parcRepo.existsById(parc.getId())) {
             throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE,
                     "impossible de trouver le parc a mettre à jour");
         }
 
-        return this.parcRepository.save(parc);
+        return this.parcRepo.save(parc);
     }
 }
