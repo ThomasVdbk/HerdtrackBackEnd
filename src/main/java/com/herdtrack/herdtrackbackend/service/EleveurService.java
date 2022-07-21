@@ -1,7 +1,7 @@
 package com.herdtrack.herdtrackbackend.service;
 
 import com.herdtrack.herdtrackbackend.entity.Eleveur;
-import com.herdtrack.herdtrackbackend.repository.EleveurRepository;
+import com.herdtrack.herdtrackbackend.repository.EleveurRepo;
 import com.herdtrack.herdtrackbackend.service.inter.IEleveurService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,7 +15,7 @@ import java.util.Optional;
 public class EleveurService implements IEleveurService {
 
     @Autowired
-    private EleveurRepository eleveurRepository;
+    private EleveurRepo eleveurRepo;
 
     /*
     methode qui retourne la liste de l'ensemble des eleveurs
@@ -25,7 +25,7 @@ public class EleveurService implements IEleveurService {
     @Override
     public List<Eleveur> findAll() {
 
-        return eleveurRepository.findAll();
+        return eleveurRepo.findAll();
     }
 
     /*
@@ -37,7 +37,7 @@ public class EleveurService implements IEleveurService {
     @Override
     public Eleveur findById(Long id) {
 
-        Optional<Eleveur> optEleveur = this.eleveurRepository.findById(id);
+        Optional<Eleveur> optEleveur = this.eleveurRepo.findById(id);
         if (optEleveur.isPresent()) {
             return optEleveur.get();
         } else {
@@ -54,7 +54,7 @@ public class EleveurService implements IEleveurService {
     @Override
     public Eleveur create(Eleveur eleveur) {
 
-        return this.eleveurRepository.save(eleveur);
+        return this.eleveurRepo.save(eleveur);
     }
 
     /*
@@ -66,11 +66,11 @@ public class EleveurService implements IEleveurService {
     @Override
     public Eleveur update(Eleveur eleveur) {
 
-        if (!this.eleveurRepository.existsById(eleveur.getId())) {
+        if (!this.eleveurRepo.existsById(eleveur.getId())) {
             throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE,
                     "impossible de trouver l'eleveur a mettre à jour");
         }
 
-        return this.eleveurRepository.save(eleveur);
+        return this.eleveurRepo.save(eleveur);
     }
 }

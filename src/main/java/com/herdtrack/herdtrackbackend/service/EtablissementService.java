@@ -1,7 +1,7 @@
 package com.herdtrack.herdtrackbackend.service;
 
 import com.herdtrack.herdtrackbackend.entity.Etablissement;
-import com.herdtrack.herdtrackbackend.repository.EtablissementRepository;
+import com.herdtrack.herdtrackbackend.repository.EtablissementRepo;
 import com.herdtrack.herdtrackbackend.service.inter.IEtablissementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,7 +15,7 @@ import java.util.Optional;
 public class EtablissementService implements IEtablissementService {
 
     @Autowired
-    private EtablissementRepository etablissementRepository;
+    private EtablissementRepo etablissementRepo;
 
     /*
     methode qui retourne la liste de l'ensemble des etablissements
@@ -25,7 +25,7 @@ public class EtablissementService implements IEtablissementService {
     @Override
     public List<Etablissement> findAll() {
 
-        return etablissementRepository.findAll();
+        return etablissementRepo.findAll();
     }
 
     /*
@@ -37,7 +37,7 @@ public class EtablissementService implements IEtablissementService {
     @Override
     public Etablissement findById(Long id) {
 
-        Optional<Etablissement> optEtablissement = this.etablissementRepository.findById(id);
+        Optional<Etablissement> optEtablissement = this.etablissementRepo.findById(id);
         if (optEtablissement.isPresent()) {
             return optEtablissement.get();
         } else {
@@ -54,7 +54,7 @@ public class EtablissementService implements IEtablissementService {
     @Override
     public Etablissement findByNumeroExploitation(String numeroExploitation) {
 
-        return etablissementRepository.findByNumeroExploitation(numeroExploitation);
+        return etablissementRepo.findByNumeroExploitation(numeroExploitation);
 
     }
 
@@ -67,7 +67,7 @@ public class EtablissementService implements IEtablissementService {
     @Override
     public Etablissement create(Etablissement etablissement) {
 
-        return this.etablissementRepository.save(etablissement);
+        return this.etablissementRepo.save(etablissement);
     }
 
     /*
@@ -79,11 +79,11 @@ public class EtablissementService implements IEtablissementService {
     @Override
     public Etablissement update(Etablissement etablissement) {
 
-        if (!this.etablissementRepository.existsById(etablissement.getId())) {
+        if (!this.etablissementRepo.existsById(etablissement.getId())) {
             throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE,
                     "impossible de trouver l'etablissement a mettre à jour");
         }
 
-        return this.etablissementRepository.save(etablissement);
+        return this.etablissementRepo.save(etablissement);
     }
 }
