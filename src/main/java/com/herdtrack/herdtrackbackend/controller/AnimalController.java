@@ -6,9 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.List;
-
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/animal")
 public class AnimalController {
@@ -39,6 +40,7 @@ public class AnimalController {
     public List<Animal> findByNom(@PathVariable String nom) {
         return this.animalService.findByNom(nom);
     }
+
 
     @PostMapping("")
     @ResponseStatus(code = HttpStatus.CREATED)
