@@ -15,11 +15,11 @@ public class Animal {
     @Column(name = "nom", length = 20)
     private String nom;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "entree_id", referencedColumnName = "id")
     private Entree entree;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "sortie_id", referencedColumnName = "id")
     private Sortie sortie;
 
@@ -37,7 +37,7 @@ public class Animal {
     @JoinColumn(name = "eleveur_id", referencedColumnName = "id")
     private Eleveur eleveur;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "statut_sante_id", referencedColumnName = "id")
     private StatutSante statutSante;
 

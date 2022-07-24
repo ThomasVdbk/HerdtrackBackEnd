@@ -1,7 +1,10 @@
 package com.herdtrack.herdtrackbackend.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "sortie")
@@ -19,8 +22,9 @@ public class Sortie {
     @Enumerated(EnumType.STRING)
     private Raison raison;
 
-    @OneToOne(mappedBy = "sortie")
-    private Animal animal;
+    @OneToMany(mappedBy = "sortie")
+    @JsonIgnore
+    private List<Animal> animals;
 
 
     public Sortie() {
