@@ -1,17 +1,15 @@
 # Herdtrack Backend
 
-definition du projet en 1 ligne ! + modif propertie dev hibernate
-
+Herdtrack est une application qui permet d'enregistrer, retrouver et suivre un animal.
 Projet POC réalisé dans le cadre de la POEC, parcours développeur d'application Java, de l'école Aston.
 
 Le projet est composé de 2 applications :
-
-Herdtrack Backend : Logique métier accécible à partir d'une Api Rest
-Herdtrack Frontend : Application web pour les usagers. Client de Herdtrack Backend
+Herdtrack Backend : Logique métier accécible à partir d'une Api Rest.
+Herdtrack Frontend : Application web pour les usagers. Client de Herdtrack Backend.
 
 Le présent dépôt représente le code source du composant backend développé du projet.
 
-Herdtrack Backend a été développé avec springboot version xxx
+Herdtrack Backend a été développé avec Spring Boot version 2.7.1
 
 ## Prérequis
 
