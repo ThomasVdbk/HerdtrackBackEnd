@@ -4,7 +4,7 @@ Herdtrack est une application qui permet d'enregistrer, retrouver et suivre un a
 Projet POC réalisé dans le cadre de la POEC, parcours développeur d'application Java, de l'école Aston.
 
 Le projet est composé de 2 applications :
-Herdtrack Backend : Logique métier accécible à partir d'une Api Rest.
+Herdtrack Backend : Logique métier accessible à partir d'une Api Rest.
 Herdtrack Frontend : Application web pour les usagers. Client de Herdtrack Backend.
 
 Le présent dépôt représente le code source du composant backend développé du projet.
@@ -17,7 +17,7 @@ Herdtrack Backend a été développé avec Spring Boot version 2.7.1
 - MySql 8.0.20
 - Maven 3.3.9
 
-## Déploiment
+## Déploiement
 
 - Clonez le projet :
 
@@ -27,14 +27,14 @@ git clone https://github.com/ThomasVdbk/HerdtrackBackEnd.git
 
 ### Déployer:
 
-- Créer une base de donnée dans MySql avec les paramétres suivants :
+- Créer une base de donnée dans MySql avec les paramètres suivants :
 
 Nom de la base  : herdtrack
 
 Identifiant : root
 Mot de passe : root
 
-Pour une installation personnalisée, vous pouvez modifier les valeurs des clès du fichier ressources/application.properties du projet :
+Pour une installation personnalisée, vous pouvez modifier les valeurs des clés du fichier ressources/application.properties du projet :
 
 ```shell
 spring.datasource.url=jdbc:mysql://localhost:3306/NOM_DATABASE?serverTimezone=Europe/Paris
